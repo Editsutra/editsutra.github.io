@@ -306,3 +306,13 @@ details p { color: var(--dim); padding: 0 0 18px; }
 .pain-out { margin-top: 28px; font-size: 19px; font-weight: 600; text-align: center; }
 .calc-est { font-size: 14px; color: var(--muted); margin-top: -8px; }
 .calc-est b { color: var(--accent-soft); }
+
+/* hero USPs + glow */
+.usps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.usps li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: #17141f; border: 1px solid #2f2945; font-size: 14px; color: #cfcfda; }
+.usps li b { color: #fff; font-weight: 600; }
+.usps svg { width: 18px; height: 18px; fill: none; stroke: var(--accent-soft); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.hero { position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; width: 760px; height: 760px; right: -200px; top: -160px; background: radial-gradient(closest-side, rgba(124, 58, 237, .28), transparent); pointer-events: none; }
+.hero-grid { position: relative; }
+.media-frame { box-shadow: 0 30px 80px rgba(0, 0, 0, .45), 0 0 0 1px rgba(139, 92, 246, .25), 0 0 80px rgba(124, 58, 237, .18); }
