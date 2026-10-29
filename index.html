@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=11">
+<link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -52,6 +52,7 @@
       <div class="hero-copy">
         <p class="eyebrow reveal">Premiere Pro plugin · Beta</p>
         <h1 class="reveal">Edit Less.<br>Create More.</h1>
+        <div class="works reveal"><span class="pair"><svg class="app-ic" viewBox="0 0 64 64" role="img" aria-label="Adobe Premiere Pro"><rect width="64" height="64" rx="14" fill="#00005b"/><rect x="2" y="2" width="60" height="60" rx="12.5" fill="none" stroke="#9999ff" stroke-width="2.5"/><text x="32" y="43" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="28" fill="#9999ff">Pr</text></svg><svg class="app-ic" viewBox="0 0 64 64" role="img" aria-label="Claude"><rect width="64" height="64" rx="14" fill="#d97757"/><g fill="#fff"><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(0 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(30 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(60 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(90 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(120 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(150 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(180 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(210 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(240 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(270 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(300 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(330 32 32)"/></g></svg></span><span>Works inside <b>Adobe Premiere Pro</b> · Pro plan powered by <b>Claude</b></span></div>
         <p class="sub reveal">Your AI-assisted editing workflow, right inside Premiere Pro.</p>
         <p class="body reveal">Cuts, captions, voice cleanup, sound design and Shorts in one Premiere Pro panel. Made for Hindi, Hinglish and English videos. Pay once, keep it forever.</p>
         <ul class="usps reveal" aria-label="Why EditSutra">
@@ -79,6 +80,15 @@
       </div>
     </div>
   </section>
+
+  <div class="trust" aria-label="Works with">
+    <div class="wrap trust-in">
+      <span class="tm-badge"><svg class="app-ic" viewBox="0 0 64 64" role="img" aria-label="Adobe Premiere Pro"><rect width="64" height="64" rx="14" fill="#00005b"/><rect x="2" y="2" width="60" height="60" rx="12.5" fill="none" stroke="#9999ff" stroke-width="2.5"/><text x="32" y="43" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="28" fill="#9999ff">Pr</text></svg><b>Made for</b> Adobe® Premiere Pro® 2024+</span>
+      <span class="tm-badge"><b>Runs on</b> Mac (Apple Silicon) &amp; Windows</span>
+      <span class="tm-badge"><b>Speaks</b> Hindi · Hinglish · English</span>
+      <span class="tm-badge"><svg class="app-ic" viewBox="0 0 64 64" role="img" aria-label="Claude"><rect width="64" height="64" rx="14" fill="#d97757"/><g fill="#fff"><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(0 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(30 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(60 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(90 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(120 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(150 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(180 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(210 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(240 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(270 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(300 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(330 32 32)"/></g></svg><b>Pro plan</b> powered by Claude</span>
+    </div>
+  </div>
 
   <!-- C. Demonstration workflow -->
   <section class="workflow" id="how-it-works">
@@ -252,7 +262,14 @@
             <a class="btn js-buy" href="#pricing" data-track="checkout_start" data-plan="beta">Buy Beta Access · ₹999</a>
             <a class="btn btn-ghost" href="#trial" data-track="trial_cta" data-where="pricing">Try free for 7 days</a>
           </div>
-          <p class="checkout-msg" id="checkout-msg" role="status" hidden></p>
+          <form class="waitlist" id="order-form" hidden novalidate>
+            <p class="stack-h">Get EditSutra Beta for ₹999</p>
+            <label>Name<input name="name" autocomplete="name" required maxlength="80"></label>
+            <label>Email (your licence key is sent here)<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+            <label>WhatsApp number<input name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" required maxlength="20"></label>
+            <button class="btn" type="submit" data-track="order_request">Send my order</button>
+            <p class="checkout-msg" id="checkout-msg" role="status" hidden></p>
+          </form>
           <p class="plan-tax">Final amount incl. any taxes is shown at checkout. One computer per licence. All sales final, test with the free trial first.</p>
         </article>
 
@@ -382,10 +399,10 @@
     <nav aria-label="Legal"><p>Policies</p><a href="policies.html#privacy">Privacy policy</a><a href="policies.html#terms">Terms of service</a><a href="policies.html#refund">Refund policy</a><a href="policies.html#licence">Licence &amp; update policy</a></nav>
     <nav aria-label="Support"><p>Support</p><span id="foot-support" class="fine">rishavskillverse@gmail.com</span></nav>
   </div>
-  <div class="wrap fine copy"><p>© 2026 EditSutra · Made by Rishav Mishra</p><p class="tm">Adobe and Premiere Pro are trademarks of Adobe Inc. EditSutra is not affiliated with Adobe.</p></div>
+  <div class="wrap fine copy"><p>© 2026 EditSutra · Made by Rishav Mishra</p><p class="tm">Adobe and Premiere Pro are trademarks of Adobe Inc. Claude is a trademark of Anthropic. EditSutra is an independent product, not affiliated with or endorsed by Adobe or Anthropic.</p></div>
 </footer>
 
-<script src="config.js?v=11"></script>
-<script src="main.js?v=11" defer></script>
+<script src="config.js?v=12"></script>
+<script src="main.js?v=12" defer></script>
 </body>
 </html>

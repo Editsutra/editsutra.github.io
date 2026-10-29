@@ -38,14 +38,25 @@
   const checkoutMsg = $('checkout-msg');
   document.querySelectorAll('.js-buy').forEach((a) => {
     if (S.checkoutUrl) { a.href = withCampaign(S.checkoutUrl); a.target = '_blank'; a.rel = 'noopener'; return; }
+    // no online checkout connected: an order form that emails the order, answered with a payment link
     a.addEventListener('click', (e) => {
       e.preventDefault();
-      checkoutMsg.hidden = false;
-      checkoutMsg.textContent = '';
-      checkoutMsg.append('Online checkout opens soon. To buy now for ₹999, email ');
-      const m = document.createElement('a'); m.href = 'mailto:' + (S.support || '') + '?subject=Buy%20EditSutra%20Beta%20(%E2%82%B9999)'; m.textContent = S.support || 'support';
-      checkoutMsg.append(m, ', you get a UPI payment link and your licence key by email.');
+      const f = $('order-form'); f.hidden = false;
+      f.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      setTimeout(() => f.querySelector('input').focus(), 400);
     });
+  });
+  $('order-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = new FormData(e.target), name = (f.get('name') || '').trim(), email = (f.get('email') || '').trim(), wa = (f.get('whatsapp') || '').trim();
+    const say = (t) => { checkoutMsg.hidden = false; checkoutMsg.textContent = t; };
+    if (!name) return say('Please add your name.');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return say('Please add a valid email: your licence key is sent there.');
+    if (!/^\+?[0-9 ()-]{8,20}$/.test(wa)) return say('Please add your WhatsApp number with country code, e.g. +91 98765 43210.');
+    track('checkout_start', { plan: 'beta', method: 'order_email' });
+    const body = `I want to buy EditSutra Beta (₹999).%0D%0A%0D%0AName: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AWhatsApp: ${encodeURIComponent(wa)}`;
+    location.href = `mailto:${S.support || ''}?subject=${encodeURIComponent('Order: EditSutra Beta ₹999, ' + name)}&body=${body}`;
+    say('Your email app is opening with your order. Press Send, and we reply with your payment link. Your licence key arrives by email right after payment.');
   });
 
   // ---------- downloads ----------

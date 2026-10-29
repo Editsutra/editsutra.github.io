@@ -16,9 +16,9 @@ p { margin: 0; }
 a { color: var(--accent-soft); }
 a:hover { color: #ddd6fe; }
 :focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 3px; border-radius: 6px; }
-.wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 .wrap.narrow { max-width: 820px; }
-section { padding: 96px 0; }
+section { padding: 84px 0; }
 .skip { position: absolute; left: -999px; top: 8px; background: var(--accent-strong); color: #fff; padding: 8px 14px; border-radius: 8px; z-index: 100; }
 .skip:focus { left: 8px; }
 .fine { font-size: 14px; color: var(--muted); }
@@ -324,3 +324,18 @@ details p { color: var(--dim); padding: 0 0 18px; }
 .card-cta .btn { align-self: flex-start; margin-top: 6px; }
 .shot-video { width: 100%; border-radius: 16px; border: 1px solid var(--line); display: block; box-shadow: 0 24px 60px rgba(0,0,0,.4); }
 @media (prefers-reduced-motion: reduce) { .shot-video { animation: none; } }
+
+/* trust strip, equal plan cards */
+.trust { border-top: 1px solid #1f1f28; border-bottom: 1px solid #1f1f28; background: #111117; }
+.trust-in { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; padding-top: 18px; padding-bottom: 18px; }
+.tm-badge { font-size: 15px; color: #cfcfda; }
+.tm-badge b { color: var(--accent-soft); font-weight: 600; margin-right: 4px; }
+.plans { align-items: stretch; }
+.plans .plan { height: 100%; }
+.plans .plan > .ctas, .plans .plan > .waitlist { margin-top: auto; }
+.works { display: flex; align-items: center; gap: 14px; color: #cfcfda; font-size: 15px; }
+.works .pair { display: inline-flex; }
+.works .app-ic { width: 46px; height: 46px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.45); }
+.works .app-ic + .app-ic { margin-left: -12px; transform: rotate(8deg); }
+.tm-badge { display: inline-flex; align-items: center; gap: 6px; }
+.tm-badge .app-ic { width: 22px; height: 22px; }
