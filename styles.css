@@ -180,3 +180,83 @@ details p { color: var(--dim); padding: 0 0 18px; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .blk { transition: none; } }
 @media (max-width: 600px) { section { padding: 72px 0; } .plan { padding: 26px; } .specs { grid-template-columns: 1fr; gap: 2px 0; } .specs dd { margin-bottom: 12px; } }
 .copy .tm { font-size: 12px; margin-top: 6px; color: #6f6f7d; }
+
+/* ---------- feature motion graphics: each card shows its feature, looping ---------- */
+.fx { position: relative; height: 112px; border-radius: 10px; background: #101016; border: 1px solid #23232d; overflow: hidden; margin-bottom: 6px; }
+.fx .face { position: absolute; left: 50%; top: 52%; width: 34%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50% 50% 42% 42%; background: radial-gradient(circle at 50% 35%, #8f7bd8 0 28%, transparent 29%), radial-gradient(ellipse at 50% 120%, #5b46a8 0 55%, transparent 56%); }
+/* 1 cut: pauses (grey) and a retake (red) collapse, speech closes up */
+.fx-cut, .fx-preview { display: flex; align-items: center; gap: 4px; padding: 0 14px; }
+.fx-cut i, .fx-preview i { height: 38px; border-radius: 5px; flex: 3 1 0; }
+.fx-cut .s, .fx-preview .s { background: #6d4ad8; }
+.fx-cut .p, .fx-preview .p { background: #3a3a46; flex-grow: 1.4; }
+.fx-cut .r { background: #b4415c; flex-grow: 2; }
+.fx-cut .p, .fx-cut .r { animation: fx-collapse 4s ease-in-out infinite; }
+@keyframes fx-collapse { 0%, 30% { flex-grow: 1.6; opacity: 1; } 55%, 85% { flex-grow: 0; opacity: 0; margin-left: -4px; } 100% { flex-grow: 1.6; opacity: 1; } }
+/* 2 modes: highlight moves Tight → Medium → Light */
+.fx-modes { display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; padding: 0 12px; font-size: 13px; font-weight: 600; color: #a6a6b4; text-align: center; }
+.fx-modes span { position: relative; z-index: 1; }
+.fx-modes b { position: absolute; top: 50%; left: 12px; width: calc((100% - 24px) / 3); height: 34px; margin-top: -17px; border-radius: 9px; background: #7c3aed; animation: fx-slide 6s ease-in-out infinite; }
+@keyframes fx-slide { 0%, 25% { transform: translateX(0); } 33%, 58% { transform: translateX(100%); } 66%, 92% { transform: translateX(200%); } 100% { transform: translateX(0); } }
+/* 3 preview: playhead sweeps, pauses switch off */
+.fx-preview .p { animation: fx-dim 4s linear infinite; }
+.fx-preview b { position: absolute; top: 16px; bottom: 16px; width: 2px; background: #c4b5fd; box-shadow: 0 0 10px #8b5cf6; animation: fx-sweep 4s linear infinite; }
+@keyframes fx-sweep { from { left: 8%; } to { left: 92%; } }
+@keyframes fx-dim { 0%, 40% { opacity: 1; } 50%, 100% { opacity: .2; } }
+/* 4 captions: words light up as they are spoken */
+.fx-caps { display: flex; align-items: flex-end; justify-content: center; padding-bottom: 18px; background: linear-gradient(180deg, #1b1630, #101016); }
+.fx-caps p { background: rgba(0, 0, 0, .65); padding: 6px 12px; border-radius: 7px; font-weight: 700; font-size: 15px; color: #8b8b9a; }
+.fx-caps span { animation: fx-word 4s steps(1) infinite; }
+.fx-caps span:nth-child(2) { animation-delay: .5s; } .fx-caps span:nth-child(3) { animation-delay: 1s; } .fx-caps span:nth-child(4) { animation-delay: 1.5s; }
+@keyframes fx-word { 0% { color: #8b8b9a; } 10%, 70% { color: #fff; } 80%, 100% { color: #8b8b9a; } }
+/* 5 voice: noisy jagged bars settle into a clean voice */
+.fx-voice { display: flex; align-items: center; justify-content: center; gap: 4px; padding: 0 16px; }
+.fx-voice i { width: 5px; height: var(--h); border-radius: 3px; background: #6d4ad8; animation: fx-clean 3.2s ease-in-out infinite; animation-delay: var(--d); }
+@keyframes fx-clean { 0%, 35% { height: var(--h); background: #5a5a6a; } 60%, 90% { height: 22%; background: #8b5cf6; } 100% { height: var(--h); background: #5a5a6a; } }
+/* 6 sound design: sounds pop up over the cuts */
+.fx-sfx .tl { position: absolute; left: 14px; right: 14px; bottom: 22px; height: 22px; display: flex; gap: 4px; }
+.fx-sfx .tl i { flex: 1; border-radius: 5px; background: #3f7bd8; }
+.fx-sfx .n { position: absolute; bottom: 48px; font-size: 18px; color: #c4b5fd; opacity: 0; animation: fx-pop 3s ease-out infinite; }
+.fx-sfx .n1 { left: 30%; } .fx-sfx .n2 { left: 50%; animation-delay: 1s; color: #86efac; } .fx-sfx .n3 { left: 70%; animation-delay: 2s; color: #fcd34d; }
+@keyframes fx-pop { 0% { opacity: 0; transform: translateY(10px) scale(.6); } 15% { opacity: 1; transform: translateY(0) scale(1.15); } 40% { opacity: 1; transform: translateY(-6px) scale(1); } 60%, 100% { opacity: 0; transform: translateY(-14px); } }
+/* 7 smooth cuts: a gentle punch-in on every other segment */
+.fx-zoom .frame { position: absolute; inset: 10px 20%; border-radius: 6px; background: #1d1830; overflow: hidden; }
+.fx-zoom .face { animation: fx-punch 3s steps(1) infinite; }
+@keyframes fx-punch { 0% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -42%) scale(1.25); } }
+/* 8 b-roll: a cutaway slides over the speaker */
+.fx-broll .main { position: absolute; inset: 10px 18%; border-radius: 6px; background: #1d1830; }
+.fx-broll .cut { position: absolute; top: 10px; bottom: 10px; left: 18%; right: 18%; border-radius: 6px; background: linear-gradient(135deg, #2f6f5a, #c9a45a); animation: fx-brollin 4s ease-in-out infinite; }
+@keyframes fx-brollin { 0%, 20% { transform: translateX(120%); } 35%, 70% { transform: translateX(0); } 85%, 100% { transform: translateX(-120%); } }
+/* 9 shorts: 16:9 becomes 9:16 around the face */
+.fx-shorts .box { position: absolute; left: 50%; top: 10px; bottom: 10px; transform: translateX(-50%); border-radius: 6px; background: #1d1830; border: 2px solid #8b5cf6; animation: fx-vert 4s ease-in-out infinite; }
+.fx-shorts .face { width: 46px; }
+@keyframes fx-vert { 0%, 25% { width: 162px; } 50%, 85% { width: 52px; } 100% { width: 162px; } }
+/* 10 templates: a title animates in */
+.fx-tpl { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+.fx-tpl p { font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: .04em; animation: fx-title 3.5s cubic-bezier(.2, .8, .2, 1) infinite; }
+.fx-tpl i { height: 3px; width: 90px; border-radius: 2px; background: #8b5cf6; transform-origin: left; animation: fx-line 3.5s ease infinite; }
+@keyframes fx-title { 0% { opacity: 0; transform: translateY(14px); letter-spacing: .3em; } 20%, 75% { opacity: 1; transform: none; letter-spacing: .04em; } 100% { opacity: 0; } }
+@keyframes fx-line { 0%, 12% { transform: scaleX(0); } 30%, 75% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+/* 11 colour: a grade wipes across a flat picture */
+.fx-color .img, .fx-color .wipe { position: absolute; inset: 10px 14px; border-radius: 6px; }
+.fx-color .img { background: linear-gradient(180deg, #8a8a8a, #5c5c5c 55%, #3f3f3f); filter: saturate(0); }
+.fx-color .wipe { background: linear-gradient(180deg, #f2a65a, #9a4f8f 55%, #2b2350); clip-path: inset(0 100% 0 0); animation: fx-wipe 4s ease-in-out infinite; }
+@keyframes fx-wipe { 0%, 15% { clip-path: inset(0 100% 0 0); } 50%, 85% { clip-path: inset(0 0 0 0); } 100% { clip-path: inset(0 100% 0 0); } }
+/* 12 podcast: the camera follows whoever speaks */
+.fx-pod { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px; }
+.fx-pod .cam { position: relative; border-radius: 6px; background: #1d1830; border: 2px solid transparent; animation: fx-live 3s steps(1) infinite; }
+.fx-pod .cam.b { animation-delay: 1.5s; }
+.fx-pod .face { width: 42%; }
+@keyframes fx-live { 0% { border-color: #8b5cf6; opacity: 1; } 50% { border-color: transparent; opacity: .35; } }
+/* 13 chapters: markers drop onto the timeline */
+.fx-chap .tl { position: absolute; left: 14px; right: 14px; bottom: 26px; height: 18px; border-radius: 5px; background: linear-gradient(90deg, #6d4ad8, #3f7bd8); }
+.fx-chap i { position: absolute; left: calc(14px + var(--x)); bottom: 44px; width: 10px; height: 26px; background: #fcd34d; clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%); opacity: 0; animation: fx-drop 4s ease-out infinite; }
+.fx-chap i:nth-of-type(2) { animation-delay: .5s; } .fx-chap i:nth-of-type(3) { animation-delay: 1s; }
+@keyframes fx-drop { 0% { opacity: 0; transform: translateY(-30px); } 15%, 80% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+/* 14 download: arrow drops, bar fills */
+.fx-dl { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+.fx-dl .arrow { font-size: 26px; color: #c4b5fd; animation: fx-bounce 1.4s ease-in-out infinite; }
+.fx-dl .bar { width: 70%; height: 8px; border-radius: 4px; background: #26262f; overflow: hidden; }
+.fx-dl .bar b { display: block; height: 100%; background: #8b5cf6; animation: fx-fill 3s ease-in-out infinite; }
+@keyframes fx-bounce { 0%, 100% { transform: translateY(-4px); } 50% { transform: translateY(5px); } }
+@keyframes fx-fill { 0% { width: 0; } 80%, 100% { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .fx *, .fx { animation: none !important; } }
