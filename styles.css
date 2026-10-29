@@ -357,3 +357,8 @@ details p { color: var(--dim); padding: 0 0 18px; }
 .pro-steps li { background: #1a1a22; border: 1px solid #2a2a35; border-radius: 14px; padding: 14px; font-size: 14px; line-height: 1.4; color: #cfcfda; }
 .pro-steps b { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #d97757); color: #fff; margin-bottom: 8px; }
 @media (max-width: 600px) { .pro-steps { grid-template-columns: 1fr; } }
+.deal { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.deal s { font-size: 30px; font-weight: 700; color: #8b8b9a; text-decoration-color: #ef4444; text-decoration-thickness: 3px; }
+.deal b { font-size: 64px; font-weight: 900; letter-spacing: -.03em; line-height: 1; color: #fff; }
+.deal em { font-style: normal; font-weight: 800; font-size: 15px; padding: 6px 12px; border-radius: 999px; background: #ef4444; color: #fff; }
+.hot { color: #fca5a5; }
