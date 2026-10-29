@@ -44,7 +44,7 @@
       checkoutMsg.textContent = '';
       checkoutMsg.append('Online checkout opens soon. To buy now for ₹999, email ');
       const m = document.createElement('a'); m.href = 'mailto:' + (S.support || '') + '?subject=Buy%20EditSutra%20Beta%20(%E2%82%B9999)'; m.textContent = S.support || 'support';
-      checkoutMsg.append(m, ' — you get a UPI payment link and your licence key by email.');
+      checkoutMsg.append(m, ', you get a UPI payment link and your licence key by email.');
     });
   });
 
@@ -103,7 +103,7 @@
     $('r-hours').textContent = (Number.isInteger(hours) ? hours : hours.toFixed(1)) + ' hours';
     $('r-value').textContent = inr(value) + ' / month';
     const days = value > 0 ? Math.max(1, Math.ceil(999 / (value / 30))) : 0;
-    $('r-payback').textContent = days ? (days === 1 ? 'about a day' : 'about ' + days + ' days') : '—';
+    $('r-payback').textContent = days ? (days === 1 ? 'about a day' : 'about ' + days + ' days') : ', ';
   };
   ['c-videos', 'c-hours', 'c-rate'].forEach((id) => $(id).addEventListener('input', calc));
   let calcTracked = false;
@@ -126,7 +126,7 @@
     if (S.waitlistUrl) { window.open(S.waitlistUrl, '_blank', 'noopener'); return say('Thanks! Finish joining in the form that just opened.'); }
     const body = `Please add me to the EditSutra Pro waitlist.%0D%0A%0D%0AName: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AWhatsApp: ${encodeURIComponent(wa)}`;
     location.href = `mailto:${S.support || ''}?subject=${encodeURIComponent('Pro waitlist: ' + name)}&body=${body}`;
-    say('Your email app is opening with your details — press Send to join. Beta buyers get the Pro upgrade offer first.');
+    say('Your email app is opening with your details, press Send to join. Beta buyers get the Pro upgrade offer first.');
   });
 
   // ---------- mobile menu ----------

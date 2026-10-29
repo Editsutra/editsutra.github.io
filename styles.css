@@ -299,3 +299,8 @@ details p { color: var(--dim); padding: 0 0 18px; }
 .waitlist .consent { grid-template-columns: auto 1fr; align-items: start; gap: 10px; font-size: 13px; }
 .waitlist .consent input { width: 20px; height: 20px; margin-top: 1px; accent-color: var(--accent); }
 .pricing .lede { color: var(--dim); margin: -16px 0 28px; }
+.pain-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 18px; }
+.pain-col { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: grid; gap: 12px; align-content: start; }
+.pain-col h3 { color: var(--accent-soft); font-size: 17px; margin-bottom: 4px; }
+.pain-col p { color: #dcdce3; padding-left: 16px; border-left: 2px solid #3a2f5c; }
+.pain-out { margin-top: 28px; font-size: 19px; font-weight: 600; text-align: center; }
