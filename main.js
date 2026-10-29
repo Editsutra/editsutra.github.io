@@ -41,7 +41,10 @@
     a.addEventListener('click', (e) => {
       e.preventDefault();
       checkoutMsg.hidden = false;
-      checkoutMsg.textContent = 'Checkout opens soon. Start the free 7-day trial today — no card needed — and buy when checkout opens.';
+      checkoutMsg.textContent = '';
+      checkoutMsg.append('Online checkout opens soon. To buy now for ₹999, email ');
+      const m = document.createElement('a'); m.href = 'mailto:' + (S.support || '') + '?subject=Buy%20EditSutra%20Beta%20(%E2%82%B9999)'; m.textContent = S.support || 'support';
+      checkoutMsg.append(m, ' — you get a UPI payment link and your licence key by email.');
     });
   });
 
