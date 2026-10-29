@@ -260,3 +260,5 @@ details p { color: var(--dim); padding: 0 0 18px; }
 @keyframes fx-bounce { 0%, 100% { transform: translateY(-4px); } 50% { transform: translateY(5px); } }
 @keyframes fx-fill { 0% { width: 0; } 80%, 100% { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .fx *, .fx { animation: none !important; } }
+.video-slot video#hero-video { object-fit: cover; }
+@media (prefers-reduced-motion: reduce) { #hero-video { display: none; } .video-slot { background: #0b0b0f url(assets/hero-poster.jpg) center / cover no-repeat; } }
