@@ -1,0 +1,122 @@
+// EditSutra website behaviour: config wiring, honest fallbacks, campaign tracking, light motion.
+(function () {
+  'use strict';
+  const S = window.SITE || {};
+  const $ = (id) => document.getElementById(id);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- campaign parameters (Instagram Reels, creator referrals) ----------
+  // utm_* and ref from the landing URL are kept for the visit and passed on to checkout.
+  const params = new URLSearchParams(location.search);
+  const campaign = {};
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'ref'].forEach((k) => { if (params.get(k)) campaign[k] = params.get(k).slice(0, 100); });
+  try {
+    if (Object.keys(campaign).length) sessionStorage.setItem('es_campaign', JSON.stringify(campaign));
+    else Object.assign(campaign, JSON.parse(sessionStorage.getItem('es_campaign') || '{}'));
+  } catch (e) { /* storage blocked: campaign only for this page view */ }
+  const withCampaign = (url) => {
+    if (!Object.keys(campaign).length) return url;
+    try { const u = new URL(url); Object.entries(campaign).forEach(([k, v]) => u.searchParams.set(k, v)); return u.href; } catch (e) { return url; }
+  };
+
+  // ---------- analytics events ----------
+  // No third-party tracker is loaded. Events go to window.dataLayer, so a privacy-friendly analytics
+  // tool can be connected later without changing the page; nothing is sent anywhere by default.
+  window.dataLayer = window.dataLayer || [];
+  const track = (event, data) => window.dataLayer.push(Object.assign({ event, ...campaign }, data || {}));
+  track('landing_visit', { path: location.pathname });
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-track]');
+    if (a) track(a.dataset.track, { where: a.dataset.where, os: a.dataset.os });
+  });
+
+  // ---------- canonical / announcement ----------
+  if (S.url) $('canonical').href = S.url;
+  if (!S.betaOffer) $('announce').hidden = true;
+
+  // ---------- checkout ----------
+  const checkoutMsg = $('checkout-msg');
+  document.querySelectorAll('.js-buy').forEach((a) => {
+    if (S.checkoutUrl) { a.href = withCampaign(S.checkoutUrl); a.target = '_blank'; a.rel = 'noopener'; return; }
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      checkoutMsg.hidden = false;
+      checkoutMsg.textContent = 'Checkout opens soon. Start the free 7-day trial today — no card needed — and buy when checkout opens.';
+    });
+  });
+
+  // ---------- downloads ----------
+  const dlMsg = $('dl-msg');
+  [['dl-mac', 'mac'], ['dl-win', 'windows']].forEach(([id, os]) => {
+    const a = $(id), url = (S.downloads || {})[os];
+    if (url) { a.href = url; return; }
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      dlMsg.hidden = false;
+      dlMsg.textContent = 'Downloads open with the public beta. ' + (S.support ? 'Contact ' + S.support + ' for early access.' : 'Early-access testers receive the installer directly.');
+    });
+  });
+
+  // ---------- support, policies ----------
+  if (S.support) {
+    const isUrl = /^https?:/.test(S.support), isMail = /@/.test(S.support);
+    const link = () => { const a = document.createElement('a'); a.textContent = S.support.replace(/^https?:\/\//, ''); a.href = isUrl ? S.support : isMail ? 'mailto:' + S.support : '#'; return a; };
+    const faq = $('faq-support'); faq.textContent = 'Write to '; faq.appendChild(link()); faq.append('. Include a screenshot and the log file from the app if something went wrong.');
+    const foot = $('foot-support'); foot.textContent = ''; foot.appendChild(link());
+  }
+  if (S.updatePolicy) $('update-policy').querySelector('span').textContent = S.updatePolicy;
+
+  // ---------- demo video ----------
+  const slot = $('demo-slot');
+  if (S.demoVideo) {
+    slot.textContent = '';
+    if (/\.(mp4|webm)$/i.test(S.demoVideo)) {
+      const v = document.createElement('video');
+      v.src = S.demoVideo; v.controls = true; v.playsInline = true; v.preload = 'metadata';
+      v.addEventListener('play', () => track('demo_play'), { once: true });
+      slot.appendChild(v);
+    } else {
+      // YouTube: a click-to-load poster, so nothing from YouTube loads until the visitor asks
+      const b = document.createElement('button');
+      b.className = 'yt'; b.type = 'button'; b.setAttribute('aria-label', 'Play the EditSutra demo video');
+      b.style.backgroundImage = `url(https://i.ytimg.com/vi/${encodeURIComponent(S.demoVideo)}/hqdefault.jpg)`;
+      b.addEventListener('click', () => {
+        track('demo_play');
+        const f = document.createElement('iframe');
+        f.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(S.demoVideo)}?autoplay=1&rel=0`;
+        f.title = 'EditSutra demo'; f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true;
+        slot.replaceChildren(f);
+      });
+      slot.appendChild(b);
+    }
+  }
+
+  // ---------- mobile menu ----------
+  const btn = $('menu-btn'), menu = $('menu');
+  btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded') !== 'true'; btn.setAttribute('aria-expanded', open); menu.classList.toggle('open', open); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); });
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) { btn.setAttribute('aria-expanded', 'false'); menu.classList.remove('open'); } });
+
+  // ---------- illustration: a timeline whose pauses and retake are removed ----------
+  const pattern = ['sp', 'pa', 'sp', 're', 'sp', 'pa', 'sp', 'sp', 'pa', 'sp'], widths = [14, 6, 11, 9, 16, 5, 9, 12, 7, 11];
+  ['tl-v', 'tl-a'].forEach((id) => {
+    const row = $(id);
+    pattern.forEach((k, i) => { const b = document.createElement('i'); b.className = 'blk ' + k; b.style.flexGrow = widths[i]; row.appendChild(b); });
+  });
+  const label = $('tl-label');
+  const runCut = () => {
+    document.querySelectorAll('.timeline .blk.pa, .timeline .blk.re').forEach((b) => b.classList.add('gone'));
+    label.textContent = 'After · review-ready';
+  };
+
+  // ---------- scroll reveals (light; off for reduced motion) ----------
+  const io = 'IntersectionObserver' in window && !reduceMotion ? new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('in');
+      if (en.target.classList.contains('timeline')) setTimeout(runCut, 700);
+      io.unobserve(en.target);
+    });
+  }, { threshold: 0.2 }) : null;
+  document.querySelectorAll('.reveal').forEach((el) => (io ? io.observe(el) : el.classList.add('in')));
+  if (!io) runCut();
+})();
