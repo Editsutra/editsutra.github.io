@@ -316,3 +316,11 @@ details p { color: var(--dim); padding: 0 0 18px; }
 .hero::before { content: ''; position: absolute; width: 760px; height: 760px; right: -200px; top: -160px; background: radial-gradient(closest-side, rgba(124, 58, 237, .28), transparent); pointer-events: none; }
 .hero-grid { position: relative; }
 .media-frame { box-shadow: 0 30px 80px rgba(0, 0, 0, .45), 0 0 0 1px rgba(139, 92, 246, .25), 0 0 80px rgba(124, 58, 237, .18); }
+
+.logo span { font: inherit; letter-spacing: inherit; }
+.card-cta { background: linear-gradient(160deg, #2a1d52, #17121f); border-color: #4b3b7d; justify-content: center; }
+.card-cta .cta-big { font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; color: #fff; }
+.card-cta p { color: #d9d2f5; }
+.card-cta .btn { align-self: flex-start; margin-top: 6px; }
+.shot-video { width: 100%; border-radius: 16px; border: 1px solid var(--line); display: block; box-shadow: 0 24px 60px rgba(0,0,0,.4); }
+@media (prefers-reduced-motion: reduce) { .shot-video { animation: none; } }
