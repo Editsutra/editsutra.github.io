@@ -330,9 +330,7 @@ details p { color: var(--dim); padding: 0 0 18px; }
 .trust-in { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; padding-top: 18px; padding-bottom: 18px; }
 .tm-badge { font-size: 15px; color: #cfcfda; }
 .tm-badge b { color: var(--accent-soft); font-weight: 600; margin-right: 4px; }
-.plans { align-items: stretch; }
-.plans .plan { height: 100%; }
-.plans .plan > .ctas, .plans .plan > .waitlist { margin-top: auto; }
+.plans { align-items: start; }
 .works { display: flex; align-items: center; gap: 14px; color: #cfcfda; font-size: 15px; }
 .works .pair { display: inline-flex; }
 .works .app-ic { width: 46px; height: 46px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.45); }
