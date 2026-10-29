@@ -97,17 +97,21 @@
   // ---------- value calculator (visitor's own numbers) ----------
   const inr = (n) => '₹' + Math.round(n).toLocaleString('en-IN');
   const calc = () => {
-    const v = +$('c-videos').value, h = +$('c-hours').value, r = +$('c-rate').value;
-    $('o-videos').textContent = v; $('o-hours').textContent = h; $('o-rate').textContent = inr(r);
+    // our estimate from testing: a 10-minute talking video takes 3.5 to 5 hours by hand and about
+    // 40 minutes with EditSutra, so roughly 0.35 hours saved per finished minute (at least half an hour)
+    const v = +$('c-videos').value, len = +$('c-len').value, r = +$('c-rate').value;
+    const h = Math.max(0.5, Math.round(len * 0.35 * 2) / 2);
+    $('o-videos').textContent = v; $('o-len').textContent = len; $('o-rate').textContent = inr(r);
+    $('o-hours').textContent = h + (h === 1 ? ' hour' : ' hours');
     const hours = v * h, value = hours * r;
     $('r-hours').textContent = (Number.isInteger(hours) ? hours : hours.toFixed(1)) + ' hours';
     $('r-value').textContent = inr(value) + ' / month';
     const days = value > 0 ? Math.max(1, Math.ceil(999 / (value / 30))) : 0;
     $('r-payback').textContent = days ? (days === 1 ? 'about a day' : 'about ' + days + ' days') : ', ';
   };
-  ['c-videos', 'c-hours', 'c-rate'].forEach((id) => $(id).addEventListener('input', calc));
+  ['c-videos', 'c-len', 'c-rate'].forEach((id) => $(id).addEventListener('input', calc));
   let calcTracked = false;
-  ['c-videos', 'c-hours', 'c-rate'].forEach((id) => $(id).addEventListener('change', () => { if (!calcTracked) { calcTracked = true; track('calculator_used'); } }));
+  ['c-videos', 'c-len', 'c-rate'].forEach((id) => $(id).addEventListener('change', () => { if (!calcTracked) { calcTracked = true; track('calculator_used'); } }));
   calc();
 
   // ---------- Pro waitlist: name, email, WhatsApp ----------

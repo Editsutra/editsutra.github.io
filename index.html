@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -203,7 +203,8 @@
         <div class="calc-in">
           <h3 id="calc-h">What EditSutra is worth to you</h3>
           <label>Videos you edit a month <output id="o-videos">8</output><input id="c-videos" type="range" min="1" max="60" value="8"></label>
-          <label>Hours EditSutra saves per video <output id="o-hours">3</output><input id="c-hours" type="range" min="0.5" max="5" step="0.5" value="3"></label>
+          <label>Length of a typical video (minutes) <output id="o-len">10</output><input id="c-len" type="range" min="1" max="60" value="10"></label>
+          <p class="calc-est">EditSutra saves about <b id="o-hours">3.5 hours</b> on a video this long (our estimate)</p>
           <label>Your time is worth (₹ per hour) <output id="o-rate">300</output><input id="c-rate" type="range" min="100" max="3000" step="50" value="300"></label>
         </div>
         <div class="calc-out" aria-live="polite">
@@ -259,7 +260,7 @@
             <li><b>Ready-made editing styles</b><span>Education, vlog, podcast, Shorts-first</span></li>
             <li><b>Private WhatsApp community for Pro editors</b><span>Share workflows, Claude skills and feedback with serious editors</span></li>
           </ul>
-          <p class="powered">Powered by Claude Code skills · requires your own Claude subscription</p>
+          <p class="powered"><b>Needs your own Claude Pro (or higher) subscription.</b> The AI Auto-Editor runs as Claude Code skills on your Claude account, paid separately to Anthropic and not included in this price.</p>
           <form class="waitlist" id="waitlist" novalidate>
             <p class="stack-h">Join the Pro waitlist</p>
             <label>Name<input name="name" autocomplete="name" required maxlength="80"></label>
@@ -344,6 +345,7 @@
         <details><summary>How many computers can I activate?</summary><p>One licence works on one computer.</p></details>
         <details><summary>Can I transfer my licence to another computer?</summary><p>Yes, if you replace or change your computer, contact support and we move your licence to the new one.</p></details>
         <details><summary>Are future updates included?</summary><p>Yes, lifetime updates. Every future version is free for licence holders, and the app shows when an update is ready.</p></details>
+        <details><summary>What do I need for the Pro AI Auto-Editor?</summary><p>Your own Claude Pro (or higher) subscription from Anthropic, which is paid separately and not included. The Pro plan gives you the editing skill pack, the editing styles and the WhatsApp community. The EditSutra plugin itself (Beta plan) needs no Claude subscription.</p></details>
         <details><summary>What if a feature doesn't work on my footage?</summary><p>That's what the free trial is for, test your own footage first. During the beta, send us a screenshot and the log file from the app so we can fix it.</p></details>
         <details><summary>How do I contact support?</summary><p id="faq-support">Email rishavskillverse@gmail.com.</p></details>
         <details><summary>What are the refund and cancellation terms?</summary><p>There is nothing to cancel: it is not a subscription. All sales are final, so please use the free 7-day trial to test EditSutra on your own footage before buying. If your key does not arrive or will not activate, email support and we fix it.</p></details>
@@ -375,7 +377,7 @@
   <div class="wrap fine copy"><p>© 2026 EditSutra · Made by Rishav Mishra</p><p class="tm">Adobe and Premiere Pro are trademarks of Adobe Inc. EditSutra is not affiliated with Adobe.</p></div>
 </footer>
 
-<script src="config.js?v=7"></script>
-<script src="main.js?v=7" defer></script>
+<script src="config.js?v=9"></script>
+<script src="main.js?v=9" defer></script>
 </body>
 </html>
