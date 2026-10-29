@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -175,35 +175,86 @@
     </div>
   </section>
 
-  <!-- H. Pricing -->
+  <!-- H. Offer + pricing -->
   <section class="pricing" id="pricing">
     <div class="wrap">
-      <h2 class="reveal">Simple, one-time pricing.</h2>
-      <div class="plan reveal">
-        <div class="plan-head">
+      <p class="eyebrow reveal">The beta offer</p>
+      <h2 class="reveal">Everything below, for less than one edited video costs.</h2>
+
+      <!-- value calculator: the visitor's own numbers, not invented "worth" figures -->
+      <div class="calc reveal" aria-labelledby="calc-h">
+        <div class="calc-in">
+          <h3 id="calc-h">What EditSutra is worth to you</h3>
+          <label>Videos you edit a month <output id="o-videos">8</output><input id="c-videos" type="range" min="1" max="60" value="8"></label>
+          <label>Hours EditSutra saves per video <output id="o-hours">3</output><input id="c-hours" type="range" min="0.5" max="5" step="0.5" value="3"></label>
+          <label>Your time is worth (₹ per hour) <output id="o-rate">300</output><input id="c-rate" type="range" min="100" max="3000" step="50" value="300"></label>
+        </div>
+        <div class="calc-out" aria-live="polite">
+          <p>Time back every month</p><b id="r-hours">24 hours</b>
+          <p>That time is worth</p><b id="r-value">₹7,200 / month</b>
+          <p class="calc-vs">EditSutra Beta costs <strong>₹999 once</strong> — paid back in <span id="r-payback">about 4 days</span>.</p>
+          <p class="fine">Your own estimate. Time saved depends on your footage and computer — the free trial shows you the real number.</p>
+        </div>
+      </div>
+
+      <div class="plans">
+        <!-- Plan 1: available now -->
+        <article class="plan reveal">
+          <p class="plan-badge">Available now</p>
           <p class="plan-name">EditSutra Beta</p>
           <p class="plan-price"><b>₹999</b> <span>one time</span></p>
-          <p class="plan-ref">Regular price <s>₹1,499</s> · save ₹500 · no monthly or annual subscription</p>
-          <p class="plan-tax" id="tax-note">The final amount, including any applicable taxes, is shown at checkout before you pay.</p>
-        </div>
-        <ul class="ticks">
-          <li>7-day free trial, no card required</li>
-          <li>One-time payment, no recurring charges</li>
-          <li>Editable Premiere Pro workflow</li>
-          <li>All features listed under “In the beta today”</li>
-          <li>Licence key by email, with activation steps</li>
-          <li>One licence = one computer</li>
-          <li>Licence for the version you buy, kept for good</li>
-          <li id="update-policy"><span>Lifetime updates included — every future version free</span></li>
-          <li>All sales final — use the free trial to test first</li>
-        </ul>
-        <div class="ctas">
-          <a class="btn" href="#trial" data-track="trial_cta" data-where="pricing">Start 7-Day Free Trial</a>
-          <a class="btn btn-ghost js-buy" href="#pricing" data-track="checkout_start">Buy Beta Access — ₹999</a>
-        </div>
-        <p class="checkout-msg" id="checkout-msg" role="status" hidden></p>
-        <p class="fine">Please review the system requirements and supported beta features before purchasing.</p>
+          <p class="plan-ref">Regular price <s>₹1,499</s> · save ₹500 · no subscription, ever</p>
+          <p class="stack-h">Everything you get</p>
+          <ul class="stack">
+            <li><b>Cut pauses, retakes &amp; mistakes</b><span>Tight, Medium &amp; Light modes, preview first</span></li>
+            <li><b>Smooth cuts</b><span>J/L sound, punch-ins, transitions on shot changes</span></li>
+            <li><b>Hindi, Hinglish &amp; English captions</b><span>Editable track, translate to English</span></li>
+            <li><b>Voice cleanup</b><span>Noise, echo and hum removed on your computer</span></li>
+            <li><b>Sound design by meaning</b><span>From your own SFX folder</span></li>
+            <li><b>Vertical Shorts</b><span>9:16 timelines and 1080×1920 reels</span></li>
+            <li><b>B-roll, light leaks &amp; caption shade</b><span>From your own media</span></li>
+            <li><b>32 animation templates</b><span>Click to drop at the playhead</span></li>
+            <li><b>Colour looks, chapters, podcast switching, downloads</b><span>All editable in Premiere</span></li>
+          </ul>
+          <p class="stack-h">Included bonuses</p>
+          <ul class="stack bonus">
+            <li><b>Lifetime updates</b><span>Every future version free</span></li>
+            <li><b>Beta-member support by email</b><span>Direct line to the maker during the beta</span></li>
+            <li><b>Your feature requests first</b><span>Beta members shape what comes next</span></li>
+          </ul>
+          <div class="ctas">
+            <a class="btn js-buy" href="#pricing" data-track="checkout_start" data-plan="beta">Buy Beta Access — ₹999</a>
+            <a class="btn btn-ghost" href="#trial" data-track="trial_cta" data-where="pricing">Try free for 7 days</a>
+          </div>
+          <p class="checkout-msg" id="checkout-msg" role="status" hidden></p>
+          <p class="plan-tax">Final amount incl. any taxes is shown at checkout. One computer per licence. All sales final — test with the free trial first.</p>
+        </article>
+
+        <!-- Plan 2: coming soon -->
+        <article class="plan plan-soon reveal">
+          <p class="plan-badge soon">Coming soon</p>
+          <p class="plan-name">EditSutra Pro + AI Auto-Editor</p>
+          <p class="plan-price"><b>₹1,599</b> <span>one time</span></p>
+          <p class="plan-ref">Everything in Beta, plus:</p>
+          <ul class="stack bonus">
+            <li><b>AI Auto-Editor skill pack</b><span>All of EditSutra's editing steps combined into one Claude Code skill</span></li>
+            <li><b>Drop a video, get a finished edit</b><span>Cuts, captions, sound, look and Shorts in one run, in your chosen style</span></li>
+            <li><b>Ready-made editing styles</b><span>Education, vlog, podcast, Shorts-first</span></li>
+          </ul>
+          <p class="powered">Powered by Claude Code skills · requires your own Claude subscription</p>
+          <div class="ctas">
+            <a class="btn btn-ghost" id="pro-waitlist" href="#pricing" data-track="waitlist_click" data-plan="pro">Join the waitlist</a>
+          </div>
+          <p class="checkout-msg" id="pro-msg" role="status" hidden></p>
+          <p class="plan-tax">Not available yet. Beta buyers will be offered the upgrade first. Claude is a product of Anthropic; EditSutra is not affiliated with Anthropic.</p>
+        </article>
       </div>
+
+      <div class="riskfree reveal">
+        <h3>Zero risk to try</h3>
+        <p>Use every feature free for 7 days on your own videos — no card, no account, nothing charged when it ends. Buy only if it saves you time.</p>
+      </div>
+      <p class="fine center-text">Please review the system requirements and supported beta features before purchasing.</p>
     </div>
   </section>
 
@@ -301,7 +352,7 @@
   <div class="wrap fine copy"><p>© 2026 EditSutra · Made by Rishav Mishra</p><p class="tm">Adobe and Premiere Pro are trademarks of Adobe Inc. EditSutra is not affiliated with Adobe.</p></div>
 </footer>
 
-<script src="config.js"></script>
-<script src="main.js" defer></script>
+<script src="config.js?v=5"></script>
+<script src="main.js?v=5" defer></script>
 </body>
 </html>

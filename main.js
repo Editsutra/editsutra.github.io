@@ -67,7 +67,7 @@
     const faq = $('faq-support'); faq.textContent = 'Write to '; faq.appendChild(link()); faq.append('. Include a screenshot and the log file from the app if something went wrong.');
     const foot = $('foot-support'); foot.textContent = ''; foot.appendChild(link());
   }
-  if (S.updatePolicy) $('update-policy').querySelector('span').textContent = S.updatePolicy;
+  if (S.updatePolicy && $('update-policy')) $('update-policy').querySelector('span').textContent = S.updatePolicy;
 
   // ---------- demo video ----------
   const slot = $('demo-slot');
@@ -93,6 +93,31 @@
       slot.appendChild(b);
     }
   }
+
+  // ---------- value calculator (visitor's own numbers) ----------
+  const inr = (n) => '₹' + Math.round(n).toLocaleString('en-IN');
+  const calc = () => {
+    const v = +$('c-videos').value, h = +$('c-hours').value, r = +$('c-rate').value;
+    $('o-videos').textContent = v; $('o-hours').textContent = h; $('o-rate').textContent = inr(r);
+    const hours = v * h, value = hours * r;
+    $('r-hours').textContent = (Number.isInteger(hours) ? hours : hours.toFixed(1)) + ' hours';
+    $('r-value').textContent = inr(value) + ' / month';
+    const days = value > 0 ? Math.max(1, Math.ceil(999 / (value / 30))) : 0;
+    $('r-payback').textContent = days ? (days === 1 ? 'about a day' : 'about ' + days + ' days') : '—';
+  };
+  ['c-videos', 'c-hours', 'c-rate'].forEach((id) => $(id).addEventListener('input', calc));
+  let calcTracked = false;
+  ['c-videos', 'c-hours', 'c-rate'].forEach((id) => $(id).addEventListener('change', () => { if (!calcTracked) { calcTracked = true; track('calculator_used'); } }));
+  calc();
+
+  // ---------- Pro plan: coming soon → waitlist by email ----------
+  $('pro-waitlist').addEventListener('click', (e) => {
+    e.preventDefault();
+    const m = $('pro-msg'); m.hidden = false; m.textContent = '';
+    m.append('The AI Auto-Editor is coming soon. To join the waitlist, email ');
+    const a = document.createElement('a'); a.href = 'mailto:' + (S.support || '') + '?subject=Waitlist%3A%20EditSutra%20Pro%20%2B%20AI%20Auto-Editor'; a.textContent = S.support || 'support';
+    m.append(a, ' with the subject “Waitlist” — beta buyers get the upgrade offer first.');
+  });
 
   // ---------- mobile menu ----------
   const btn = $('menu-btn'), menu = $('menu');
