@@ -179,3 +179,4 @@ details p { color: var(--dim); padding: 0 0 18px; }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .blk { transition: none; } }
 @media (max-width: 600px) { section { padding: 72px 0; } .plan { padding: 26px; } .specs { grid-template-columns: 1fr; gap: 2px 0; } .specs dd { margin-bottom: 12px; } }
+.copy .tm { font-size: 12px; margin-top: 6px; color: #6f6f7d; }
