@@ -337,3 +337,13 @@ details p { color: var(--dim); padding: 0 0 18px; }
 .works .app-ic + .app-ic { margin-left: -12px; transform: rotate(8deg); }
 .tm-badge { display: inline-flex; align-items: center; gap: 6px; }
 .tm-badge .app-ic { width: 22px; height: 22px; }
+.pro-hero { border-radius: 16px; padding: 18px 20px; background: linear-gradient(135deg, #2a1d52, #3b1f3a); border: 1px solid #6d4ad8; display: grid; gap: 8px; }
+.pro-say { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-soft); font-weight: 700; }
+.pro-say:last-child { text-transform: none; letter-spacing: 0; font-size: 15px; color: #fff; }
+.pro-prompt { font-size: 19px; line-height: 1.4; font-weight: 600; color: #fff; background: #0e0e12; border-radius: 12px; padding: 12px 14px; border-left: 3px solid #d97757; }
+.pro-pitch { color: #cfcfda; font-size: 16px; line-height: 1.55; }
+.pro-pitch b { color: #fff; }
+.pro-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.pro-price s { color: #8b8b9a; font-size: 22px; }
+.pro-price b { font-size: 46px; font-weight: 900; letter-spacing: -.02em; background: linear-gradient(90deg, #c4b5fd, #f0a27e); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.pro-price span { color: #8b8b9a; font-size: 14px; flex-basis: 100%; }
