@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -180,6 +180,7 @@
     <div class="wrap">
       <p class="eyebrow reveal">The beta offer</p>
       <h2 class="reveal">Everything below, for less than one edited video costs.</h2>
+      <p class="lede reveal">Most AI editing plugins charge a yearly subscription. EditSutra is one payment, with lifetime updates.</p>
 
       <!-- value calculator: the visitor's own numbers, not invented "worth" figures -->
       <div class="calc reveal" aria-labelledby="calc-h">
@@ -240,12 +241,18 @@
             <li><b>AI Auto-Editor skill pack</b><span>All of EditSutra's editing steps combined into one Claude Code skill</span></li>
             <li><b>Drop a video, get a finished edit</b><span>Cuts, captions, sound, look and Shorts in one run, in your chosen style</span></li>
             <li><b>Ready-made editing styles</b><span>Education, vlog, podcast, Shorts-first</span></li>
+            <li><b>Private WhatsApp community for Pro editors</b><span>Share workflows, Claude skills and feedback with serious editors</span></li>
           </ul>
           <p class="powered">Powered by Claude Code skills · requires your own Claude subscription</p>
-          <div class="ctas">
-            <a class="btn btn-ghost" id="pro-waitlist" href="#pricing" data-track="waitlist_click" data-plan="pro">Join the waitlist</a>
-          </div>
-          <p class="checkout-msg" id="pro-msg" role="status" hidden></p>
+          <form class="waitlist" id="waitlist" novalidate>
+            <p class="stack-h">Join the Pro waitlist</p>
+            <label>Name<input name="name" autocomplete="name" required maxlength="80"></label>
+            <label>Email<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+            <label>WhatsApp number<input name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" required maxlength="20"></label>
+            <label class="consent"><input type="checkbox" name="consent" required> I agree to be contacted by email and WhatsApp about EditSutra Pro and the community.</label>
+            <button class="btn" type="submit" data-track="waitlist_submit" data-plan="pro">Join the waitlist</button>
+            <p class="checkout-msg" id="pro-msg" role="status" hidden></p>
+          </form>
           <p class="plan-tax">Not available yet. Beta buyers will be offered the upgrade first. Claude is a product of Anthropic; EditSutra is not affiliated with Anthropic.</p>
         </article>
       </div>
@@ -352,7 +359,7 @@
   <div class="wrap fine copy"><p>© 2026 EditSutra · Made by Rishav Mishra</p><p class="tm">Adobe and Premiere Pro are trademarks of Adobe Inc. EditSutra is not affiliated with Adobe.</p></div>
 </footer>
 
-<script src="config.js?v=5"></script>
-<script src="main.js?v=5" defer></script>
+<script src="config.js?v=6"></script>
+<script src="main.js?v=6" defer></script>
 </body>
 </html>

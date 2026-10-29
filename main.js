@@ -110,13 +110,23 @@
   ['c-videos', 'c-hours', 'c-rate'].forEach((id) => $(id).addEventListener('change', () => { if (!calcTracked) { calcTracked = true; track('calculator_used'); } }));
   calc();
 
-  // ---------- Pro plan: coming soon → waitlist by email ----------
-  $('pro-waitlist').addEventListener('click', (e) => {
+  // ---------- Pro waitlist: name, email, WhatsApp ----------
+  // With SITE.waitlistUrl (e.g. a Google Form) the visitor goes there; otherwise their email app opens a
+  // ready-written message to support, so nothing is lost and no data is sent anywhere else.
+  const form = $('waitlist'), proMsg = $('pro-msg');
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const m = $('pro-msg'); m.hidden = false; m.textContent = '';
-    m.append('The AI Auto-Editor is coming soon. To join the waitlist, email ');
-    const a = document.createElement('a'); a.href = 'mailto:' + (S.support || '') + '?subject=Waitlist%3A%20EditSutra%20Pro%20%2B%20AI%20Auto-Editor'; a.textContent = S.support || 'support';
-    m.append(a, ' with the subject “Waitlist” — beta buyers get the upgrade offer first.');
+    const f = new FormData(form), name = (f.get('name') || '').trim(), email = (f.get('email') || '').trim(), wa = (f.get('whatsapp') || '').trim();
+    const say = (t) => { proMsg.hidden = false; proMsg.textContent = t; };
+    if (!name) return say('Please add your name.');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return say('Please add a valid email.');
+    if (!/^\+?[0-9 ()-]{8,20}$/.test(wa)) return say('Please add your WhatsApp number with country code, e.g. +91 98765 43210.');
+    if (!f.get('consent')) return say('Please tick the box so we can contact you.');
+    track('waitlist_complete', { plan: 'pro' });
+    if (S.waitlistUrl) { window.open(S.waitlistUrl, '_blank', 'noopener'); return say('Thanks! Finish joining in the form that just opened.'); }
+    const body = `Please add me to the EditSutra Pro waitlist.%0D%0A%0D%0AName: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AWhatsApp: ${encodeURIComponent(wa)}`;
+    location.href = `mailto:${S.support || ''}?subject=${encodeURIComponent('Pro waitlist: ' + name)}&body=${body}`;
+    say('Your email app is opening with your details — press Send to join. Beta buyers get the Pro upgrade offer first.');
   });
 
   // ---------- mobile menu ----------

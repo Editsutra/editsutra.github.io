@@ -13,6 +13,8 @@ window.SITE = {
   support: 'rishavskillverse@gmail.com',
   // Update policy text once decided, e.g. "All 1.x updates included"
   updatePolicy: 'Lifetime updates included — every future version free',
+  // Pro waitlist form address (e.g. a Google Form). Empty = the form emails your support address instead
+  waitlistUrl: '',
   // Show the ₹999 announcement bar (turn off when the beta offer ends)
   betaOffer: true,
 };
