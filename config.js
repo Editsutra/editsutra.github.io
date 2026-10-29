@@ -2,7 +2,7 @@
 // Empty values are handled honestly on the page ("opens soon", "will be published"), never faked.
 window.SITE = {
   // Production address, e.g. "https://editsutra.dpdns.org/", used for the canonical link and sharing
-  url: 'https://rishavm713-create.github.io/editsutra/',
+  url: 'https://editsutra.github.io/',
   // SuperProfile checkout page for the ₹999 beta (payment + automatic licence email happen there)
   checkoutUrl: '',
   // Installer downloads (e.g. GitHub Releases links)
