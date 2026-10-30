@@ -398,3 +398,36 @@ details p { color: var(--dim); padding: 0 0 18px; }
 .team-out .team-worth { margin-top: 0; }
 .team-out .btn { margin-top: 14px; justify-self: start; }
 .plans .team { grid-column: 1 / -1; }
+
+/* ---------- phones: a shorter page that reads like an app ---------- */
+.m-cta, .roadmap .more { display: none; }
+.features .swipe-hint { display: none; margin: 4px 0 0; font-size: .85rem; color: #b9b9c6; text-align: center; }
+@media (max-width: 640px) {
+  section { padding: 52px 0; }
+  .lede { font-size: 1rem; }
+  /* hero: the five badges two by two instead of one per line */
+  .usps { display: flex; flex-wrap: wrap; gap: 8px; }
+  .usps li { font-size: .85rem; padding: 6px 10px; }
+  /* features: one card at a time, swipe sideways, the next one peeking in */
+  .features .grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 4px 16px 14px; margin: 0 -16px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .features .grid::-webkit-scrollbar { display: none; }
+  .features .grid > .card { flex: 0 0 84%; scroll-snap-align: center; }
+  .features .swipe-hint { display: block; }
+  /* coming next: the first four, then "and more" */
+  .roadmap li:nth-child(n+5) { display: none; }
+  .roadmap .more { display: block; margin: 6px 0 0; color: #b9b9c6; }
+  /* pricing: the short lines only */
+  .plan .stack li span { display: none; }
+  .plan { padding: 22px; gap: 16px; }
+  .deal b { font-size: 52px; }
+  .team { padding: 20px; }
+  .team-out b { font-size: 1.6rem; }
+  /* the coming-soon Pro card: pitch and waitlist only */
+  .plan-soon .pro-vs, .plan-soon .pro-steps { display: none; }
+  /* a "Start free trial" bar that stays at the bottom of the screen */
+  .m-cta { display: flex; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 50; justify-content: center; padding: 14px; border-radius: 14px; font-weight: 800; color: #fff; background: linear-gradient(90deg, #7c3aed, #6d28d9); box-shadow: 0 10px 30px rgba(0,0,0,.5); text-decoration: none; transition: transform .25s, opacity .25s; }
+  .m-cta.away { transform: translateY(140%); opacity: 0; }
+  body { padding-bottom: 76px; }
+  /* bigger tap targets for the small inline links */
+  .more-link, footer a { display: inline-block; padding: 6px 0; }
+}

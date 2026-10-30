@@ -154,6 +154,17 @@
   ['t-eds', 't-pay', 't-vids', 't-len'].forEach((id) => $(id).addEventListener('change', () => { if (!teamTracked) { teamTracked = true; track('team_calculator_used'); } }));
   teamCalc();
 
+  // ---------- phone: the sticky trial bar hides at the top of the page and where a trial button is in view ----------
+  const mcta = $('m-cta');
+  if (mcta && 'IntersectionObserver' in window) {
+    const seen = new Set();
+    const io2 = new IntersectionObserver((list) => {
+      list.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)));
+      mcta.classList.toggle('away', seen.size > 0);
+    });
+    document.querySelectorAll('.hero .ctas, #trial, #final').forEach((el) => io2.observe(el));
+  }
+
   // ---------- Pro waitlist: name, email, WhatsApp ----------
   // With SITE.waitlistUrl (e.g. a Google Form) the visitor goes there; otherwise their email app opens a
   // ready-written message to support, so nothing is lost and no data is sent anywhere else.
