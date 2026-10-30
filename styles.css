@@ -369,3 +369,32 @@ details p { color: var(--dim); padding: 0 0 18px; }
 .install-help > div { background: #15151b; border: 1px solid #2a2a35; border-radius: 16px; padding: 18px 20px; }
 .install-help h3 { font-size: 16px; margin-bottom: 8px; }
 .install-help p { color: #cfcfda; font-size: 14px; line-height: 1.55; }
+
+/* checkout trust row (pricing card) */
+.pay-trust { list-style: none; margin: 14px 0 0; padding: 12px 14px; display: grid; gap: 6px; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; background: rgba(255,255,255,.03); font-size: .9rem; }
+.pay-trust li::before { content: "✓"; margin-right: 8px; color: #22c55e; font-weight: 700; }
+
+/* Monthly + Standard Annual side by side under the Early Bird card */
+.plan-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; }
+.plan-mini { padding: 24px; gap: 14px; }
+.plan-mini .deal b { font-size: 42px; }
+.deal em.per { font-style: normal; font-weight: 600; color: #b9b9c6; font-size: 18px; padding: 0; background: none; }
+/* the hidden attribute must win over display rules like .waitlist { display: grid } */
+[hidden] { display: none !important; }
+
+/* "less than a Netflix plan" line on the Monthly card */
+.netflix { margin: -6px 0 0; font-weight: 700; color: #f87171; font-size: .95rem; }
+.netflix sup, .lede sup, .team-sub sup { font-size: .7em; }
+/* team calculator */
+.team { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; padding: 28px; border-radius: 22px; border: 1px solid #3d3066; background: linear-gradient(180deg, #1c1630, var(--card)); }
+.team-in label { display: grid; gap: 6px; margin: 14px 0; font-size: .95rem; }
+.team-in label output { font-weight: 800; color: #fff; justify-self: start; }
+.team-in input[type=range] { width: 100%; }
+.team-in h3 { margin: 6px 0 4px; font-size: 1.6rem; }
+.team-sub { margin: 0 0 6px; color: #b9b9c6; }
+.team-out { display: grid; align-content: start; gap: 4px; padding: 18px; border-radius: 16px; background: rgba(255,255,255,.04); }
+.team-out p { margin: 8px 0 0; color: #b9b9c6; }
+.team-out b { font-size: 2rem; font-weight: 900; color: #fff; line-height: 1.1; }
+.team-out .team-worth { margin-top: 0; }
+.team-out .btn { margin-top: 14px; justify-self: start; }
+.plans .team { grid-column: 1 / -1; }

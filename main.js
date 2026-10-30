@@ -41,7 +41,10 @@
     // no online checkout connected: an order form that emails the order, answered with a payment link
     a.addEventListener('click', (e) => {
       e.preventDefault();
+      // the plan clicked is the plan ordered (Early Bird, Monthly or Standard Annual)
       const f = $('order-form'); f.hidden = false;
+      f.dataset.plan = a.dataset.plan || 'Early Bird Annual · ₹999 for 12 months';
+      $('order-plan').textContent = 'Your order: ' + f.dataset.plan;
       f.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
       setTimeout(() => f.querySelector('input').focus(), 400);
     });
@@ -53,9 +56,11 @@
     if (!name) return say('Please add your name.');
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return say('Please add a valid email: your licence key is sent there.');
     if (!/^\+?[0-9 ()-]{8,20}$/.test(wa)) return say('Please add your WhatsApp number with country code, e.g. +91 98765 43210.');
-    track('checkout_start', { plan: 'beta', method: 'order_email' });
-    const body = `I want to buy EditSutra Beta (₹999).%0D%0A%0D%0AName: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AWhatsApp: ${encodeURIComponent(wa)}`;
-    location.href = `mailto:${S.support || ''}?subject=${encodeURIComponent('Order: EditSutra Beta ₹999, ' + name)}&body=${body}`;
+    const plan = $('order-form').dataset.plan || 'Early Bird Annual · ₹999 for 12 months';
+    track('checkout_start', { plan, method: 'order_email' });
+    const body = `I want to buy EditSutra: ${encodeURIComponent(plan)}.%0D%0A%0D%0AName: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AWhatsApp: ${encodeURIComponent(wa)}`;
+    // the subject must start with "Order: EditSutra": the Gmail licence script looks for it
+    location.href = `mailto:${S.support || ''}?subject=${encodeURIComponent('Order: EditSutra ' + plan + ', ' + name)}&body=${body}`;
     say('Your email app is opening with your order. Press Send, and we reply with your payment link. Your licence key arrives by email right after payment.');
   });
 
@@ -124,6 +129,30 @@
   let calcTracked = false;
   ['c-videos', 'c-len', 'c-rate'].forEach((id) => $(id).addEventListener('change', () => { if (!calcTracked) { calcTracked = true; track('calculator_used'); } }));
   calc();
+
+  // ---------- team calculator: a whole editing team, the visitor's own numbers ----------
+  // hours saved per video as in the personal calculator; a working month is 160 hours, and no editor is
+  // counted as saving more than 60 % of it (they also plan, shoot, revise and talk to clients)
+  const teamCalc = () => {
+    const n = +$('t-eds').value, pay = +$('t-pay').value, vids = +$('t-vids').value, len = +$('t-len').value;
+    $('o-t-eds').textContent = n; $('o-t-pay').textContent = inr(pay); $('o-t-vids').textContent = vids; $('o-t-len').textContent = len;
+    const savedPerVideo = Math.max(0.5, len * 0.35), handPerVideo = Math.max(1, len * 0.42);
+    const perEditor = Math.min(vids * savedPerVideo, 160 * 0.6), hours = n * perEditor;
+    const hires = hours / 160, worth = hires * pay, cost = n * 129;
+    $('t-hours').textContent = Math.round(hours).toLocaleString('en-IN') + ' hours';
+    $('t-hires').textContent = (hires < 10 ? hires.toFixed(1) : Math.round(hires)) + ' more editor' + (hires >= 1.05 || hires < 0.95 ? 's' : '');
+    $('t-worth').textContent = inr(worth);
+    $('t-more').textContent = '+' + Math.round(hours / handPerVideo).toLocaleString('en-IN') + ' videos a month';
+    $('t-n').textContent = n + ' editor' + (n === 1 ? '' : 's');
+    $('t-cost').textContent = inr(cost) + ' / month';
+    $('t-roi').textContent = (worth / cost >= 10 ? Math.round(worth / cost) : (worth / cost).toFixed(1)) + '×';
+    const subject = `Team licence: EditSutra for ${n} editors`;
+    $('t-quote').href = `mailto:${S.support || ''}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hi, we are a team of ${n} editors and want EditSutra for everyone. Please send a team quote.\n\nCompany:\nName:\nWhatsApp:`)}`;
+  };
+  ['t-eds', 't-pay', 't-vids', 't-len'].forEach((id) => $(id).addEventListener('input', teamCalc));
+  let teamTracked = false;
+  ['t-eds', 't-pay', 't-vids', 't-len'].forEach((id) => $(id).addEventListener('change', () => { if (!teamTracked) { teamTracked = true; track('team_calculator_used'); } }));
+  teamCalc();
 
   // ---------- Pro waitlist: name, email, WhatsApp ----------
   // With SITE.waitlistUrl (e.g. a Google Form) the visitor goes there; otherwise their email app opens a
