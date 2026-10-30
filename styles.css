@@ -362,3 +362,6 @@ details p { color: var(--dim); padding: 0 0 18px; }
 .deal b { font-size: 64px; font-weight: 900; letter-spacing: -.03em; line-height: 1; color: #fff; }
 .deal em { font-style: normal; font-weight: 800; font-size: 15px; padding: 6px 12px; border-radius: 999px; background: #ef4444; color: #fff; }
 .hot { color: #fca5a5; }
+.roadmap ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 8px 28px; }
+.roadmap li b { color: #fff; }
+.free-tag { display: inline-block; margin-left: 10px; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: #2a1d52; color: var(--accent-soft); vertical-align: middle; }
