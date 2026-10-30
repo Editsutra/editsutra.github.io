@@ -165,6 +165,16 @@
     document.querySelectorAll('.hero .ctas, #trial, #final').forEach((el) => io2.observe(el));
   }
 
+  // ---------- preset loops: load and play only while on screen (saves phone data and battery) ----------
+  const loops = document.querySelectorAll('.loop video');
+  if (loops.length && 'IntersectionObserver' in window && !reduceMotion) {
+    const io3 = new IntersectionObserver((list) => list.forEach((e) => {
+      const v = e.target;
+      if (e.isIntersecting) { if (!v.src) v.src = v.dataset.src; v.play().catch(() => {}); } else v.pause();
+    }), { rootMargin: '100px' });
+    loops.forEach((v) => io3.observe(v));
+  }
+
   // ---------- Pro waitlist: name, email, WhatsApp ----------
   // With SITE.waitlistUrl (e.g. a Google Form) the visitor goes there; otherwise their email app opens a
   // ready-written message to support, so nothing is lost and no data is sent anywhere else.
