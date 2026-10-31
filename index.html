@@ -4,29 +4,28 @@
 <script>if(location.hostname==="rishavm713-create.github.io")location.replace("https://editsutra.github.io/"+location.pathname.replace(/^\/editsutra\/?/,"")+location.search+location.hash)</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EditSutra: AI-Assisted Video Editing for Premiere Pro</title>
-<meta name="description" content="Automate repetitive video editing, captions and supported audio workflows in Adobe Premiere Pro. Try EditSutra free for 7 days.">
+<title>EditSutra: AI Editing Inside Premiere Pro</title>
+<meta name="description" content="Auto-cut silences and retakes, Hindi, Hinglish and English captions, voice cleanup, music removal, beat markers and Shorts, inside Adobe Premiere Pro. Offline. Free for 7 days.">
 <link rel="canonical" href="https://editsutra.github.io/" id="canonical">
 <meta property="og:type" content="website">
 <meta property="og:title" content="EditSutra: Edit Less. Create More.">
-<meta property="og:description" content="AI-assisted editing workflow inside Premiere Pro, for Hindi, Hinglish and English creators. 7-day free trial. Founding offer: ₹999 for your first 12 months.">
+<meta property="og:description" content="AI editing inside Premiere Pro for Hindi, Hinglish and English creators. 7-day free trial. Founding offer: ₹999 for your first 12 months.">
 <meta property="og:image" content="https://editsutra.github.io/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0e0e12">
+<meta name="theme-color" content="#0a0a0c">
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=24">
+<link rel="stylesheet" href="styles.css?v=25">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<!-- A. Announcement -->
 <div class="announce" id="announce">
   <div class="wrap announce-in">
-    <span>Founding offer: EditSutra for <b>₹999</b> for your first 12 months. First 100 customers only.</span>
-    <a href="#pricing" data-track="announce_cta">Explore the beta →</a>
+    <span><b>Founding offer:</b> your first 12 months for ₹999. First 100 customers only.</span>
+    <a href="#pricing" data-track="announce_cta">See the offer <span aria-hidden="true">→</span></a>
   </div>
 </div>
 
@@ -36,10 +35,8 @@
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
     <nav id="menu" aria-label="Main">
       <a href="#features">Features</a>
-      <a href="#languages">Languages</a>
       <a href="#pricing">Pricing</a>
       <a href="#teams">For teams</a>
-      <a href="#requirements">Requirements</a>
       <a href="#faq">FAQ</a>
       <a class="btn btn-sm" href="#trial" data-track="trial_cta" data-where="nav">Start free trial</a>
     </nav>
@@ -48,489 +45,376 @@
 
 <main id="main">
 
-  <!-- B. Hero -->
+  <!-- Hero -->
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow reveal">Premiere Pro plugin · Beta</p>
-        <h1 class="reveal">Edit Less.<br>Create More.</h1>
-        <div class="works reveal"><span class="pair"><svg class="app-ic" viewBox="0 0 64 64" role="img" aria-label="Adobe Premiere Pro"><rect width="64" height="64" rx="14" fill="#00005b"/><rect x="2" y="2" width="60" height="60" rx="12.5" fill="none" stroke="#9999ff" stroke-width="2.5"/><text x="32" y="43" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="28" fill="#9999ff">Pr</text></svg><svg class="app-ic" viewBox="0 0 64 64" role="img" aria-label="Claude"><rect width="64" height="64" rx="14" fill="#d97757"/><g fill="#fff"><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(0 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(30 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(60 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(90 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(120 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(150 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(180 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(210 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(240 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(270 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(300 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(330 32 32)"/></g></svg></span><span>Works inside <b>Adobe Premiere Pro</b> · Pro plan powered by <b>Claude</b></span></div>
-        <p class="sub reveal">Your AI-assisted editing workflow, right inside Premiere Pro.</p>
-        <p class="body reveal">Cuts, captions, voice cleanup, sound design and Shorts in one Premiere Pro panel. Made for Hindi, Hinglish and English videos.</p>
-        <ul class="usps reveal" aria-label="Why EditSutra">
-          <li><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><b>17 tools</b> in one panel</li>
-          <li><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 13h4M13 13h4"/></svg><b>Hindi &amp; Hinglish</b> captions</li>
-          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 4h12M6 9h12M13 9c0 4-3 6-7 6l8 5"/></svg><b>₹999</b> for your first year</li>
-          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><b>Offline</b> videos stay with you</li>
-          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z"/></svg><b>Fully editable</b> in Premiere</li>
-        </ul>
+        <p class="pill reveal"><span class="dot" aria-hidden="true"></span>Premiere Pro plugin · Mac &amp; Windows</p>
+        <h1 class="reveal">Edit less.<br><span class="hl">Create more.</span></h1>
+        <p class="sub reveal">Raw talking-head footage in, a review-ready timeline out. Silences, retakes, captions, sound and Shorts, done inside Premiere Pro, on your own computer.</p>
         <div class="ctas reveal">
-          <a class="btn" href="#trial" data-track="trial_cta" data-where="hero">Start Your 7-Day Free Trial</a>
-          <a class="btn btn-ghost" href="#demo" data-track="demo_cta">Watch the Demo</a>
+          <a class="btn btn-lg" href="#trial" data-track="trial_cta" data-where="hero">Start your 7-day free trial</a>
+          <a class="btn btn-ghost btn-lg" href="#demo" data-track="demo_cta">Watch it work</a>
         </div>
-        <p class="micro reveal">7 days free · No card required · Founding offer ₹999 for 12 months</p>
-        <p class="for reveal">For YouTube educators, Hindi &amp; Hinglish creators, freelance editors and small agencies.</p>
+        <p class="micro reveal">No card · No account · Hindi, Hinglish &amp; English</p>
       </div>
       <div class="hero-media reveal" id="demo">
         <div class="media-frame">
-          <div class="media-bar"><i></i><i></i><i></i><span>EditSutra · overview</span></div>
+          <div class="media-bar"><i></i><i></i><i></i><span>EditSutra · Premiere Pro</span></div>
           <div class="video-slot" id="demo-slot">
-            <!-- animated overview made with HyperFrames; main.js swaps in the real demo once SITE.demoVideo is set -->
             <video id="hero-video" src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Animated overview: pauses removed, captions in Hinglish, Hindi and English, Shorts in 9:16"></video>
           </div>
         </div>
       </div>
     </div>
+    <div class="wrap">
+      <ul class="stats reveal" aria-label="Tested on a real 47-minute raw Hinglish video">
+        <li><b>47 → 32 min</b><span>raw Hinglish video, cut</span></li>
+        <li><b>373</b><span>natural cuts, retakes removed</span></li>
+        <li><b>0</b><span>gaps left on the timeline</span></li>
+        <li><b>~10 min</b><span>on an Apple Silicon Mac</span></li>
+      </ul>
+    </div>
   </section>
 
-  <div class="trust" aria-label="Works with">
-    <div class="wrap trust-in">
-      <span class="tm-badge"><svg class="app-ic" viewBox="0 0 64 64" role="img" aria-label="Adobe Premiere Pro"><rect width="64" height="64" rx="14" fill="#00005b"/><rect x="2" y="2" width="60" height="60" rx="12.5" fill="none" stroke="#9999ff" stroke-width="2.5"/><text x="32" y="43" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="28" fill="#9999ff">Pr</text></svg><b>Made for</b> Adobe® Premiere Pro® 2024+</span>
-      <span class="tm-badge"><b>Runs on</b> Mac (Apple Silicon) &amp; Windows</span>
-      <span class="tm-badge"><b>Speaks</b> Hindi · Hinglish · English</span>
-      <span class="tm-badge"><svg class="app-ic" viewBox="0 0 64 64" role="img" aria-label="Claude"><rect width="64" height="64" rx="14" fill="#d97757"/><g fill="#fff"><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(0 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(30 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(60 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(90 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(120 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(150 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(180 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(210 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(240 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(270 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(300 32 32)"/><rect x="30" y="10" width="4" height="22" rx="2" transform="rotate(330 32 32)"/></g></svg><b>Pro plan</b> powered by Claude</span>
-    </div>
-  </div>
-
-  <!-- C. Demonstration workflow -->
-  <section class="workflow" id="how-it-works">
+  <!-- How it works -->
+  <section class="section workflow" id="how-it-works">
     <div class="wrap">
+      <p class="eyebrow reveal">How it works</p>
       <h2 class="reveal">From repetitive editing to a review-ready timeline.</h2>
-      <ol class="flow">
-        <li class="reveal"><b>1</b><h3>Open your project</h3><p>Open your talking-head sequence in Premiere Pro. Footage can sit on any video track, or be audio only.</p></li>
-        <li class="reveal"><b>2</b><h3>Choose what to automate</h3><p>Pauses and retakes, captions, voice cleanup, sound design, Shorts, one tab each in the EditSutra panel.</p></li>
-        <li class="reveal"><b>3</b><h3>Review the result</h3><p>Cuts, captions, sounds and markers land on your timeline. Preview cuts first if you like.</p></li>
-        <li class="reveal"><b>4</b><h3>Refine in Premiere</h3><p>Everything stays editable. Undo in the panel brings back the version from before.</p></li>
-      </ol>
       <div class="timeline reveal" aria-label="Illustration: grey pauses and a red retake are removed and the speech clips close up">
         <div class="tl-row" id="tl-v"></div>
         <div class="tl-row tl-a" id="tl-a"></div>
         <div class="tl-foot"><span><i class="k sp"></i>speech</span><span><i class="k pa"></i>pause</span><span><i class="k re"></i>retake</span><span class="tl-label" id="tl-label">Before</span></div>
       </div>
-      <p class="center"><a class="btn" href="#trial" data-track="trial_cta" data-where="workflow">Try EditSutra Free</a></p>
+      <ol class="steps">
+        <li class="reveal"><b>1</b><h3>Open your sequence</h3><p>Any talking-head edit in Premiere Pro, video or audio only.</p></li>
+        <li class="reveal"><b>2</b><h3>Click what to automate</h3><p>Pauses, retakes, captions, sound, Shorts: one tab each.</p></li>
+        <li class="reveal"><b>3</b><h3>Review and refine</h3><p>Normal clips, captions and markers you can still edit. One-click Undo.</p></li>
+      </ol>
     </div>
   </section>
 
-  <!-- D. Pain points: editors, creators and clients, marketers -->
-  <section class="pain">
+  <!-- Features -->
+  <section class="section features" id="features">
     <div class="wrap">
-      <h2 class="reveal">Sound familiar?</h2>
+      <p class="eyebrow reveal">23 tools, one panel</p>
+      <h2 class="reveal">Everything the slow first pass needs.</h2>
+      <p class="lede reveal">Each tool lands real, editable work on your timeline. Nothing is uploaded: your footage stays on your computer.</p>
+
+      <div class="groups">
+        <article class="group reveal">
+          <div class="g-head"><span class="g-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></svg></span><h3>Cut</h3></div>
+          <ul>
+            <li><b>Natural silence cutting</b>Long pauses become a breath, never choppy. Cuts land inside the silence.</li>
+            <li><b>AI retake picker</b>Keeps the last good take, removes false starts and repeated lines, offline.</li>
+            <li><b>Invisible jump cuts</b>Matches eye level across each cut, zooms only when needed, J/L sound.</li>
+            <li><b>Black-frame finder</b>Marks flash frames and black gaps before you export.</li>
+          </ul>
+        </article>
+        <article class="group reveal">
+          <div class="g-head"><span class="g-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 15h4M13 15h4M7 11h10"/></svg></span><h3>Captions</h3></div>
+          <ul>
+            <li><b>Hindi, Hinglish &amp; English</b>A dedicated model for each language. 5 minutes of video in about 20 seconds.</li>
+            <li><b>Use your own script</b>Paste what you read: captions keep your exact words, timed to your voice.</li>
+            <li><b>Translate to English</b>English captions for Hindi or Hinglish speech.</li>
+            <li><b>Editable caption track</b>Normal Premiere captions, or only for an In/Out range.</li>
+          </ul>
+        </article>
+        <article class="group reveal">
+          <div class="g-head"><span class="g-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span><h3>Sound</h3></div>
+          <ul>
+            <li><b>Voice cleanup</b>Background noise, echo and hum removed. Original kept, muted.</li>
+            <li><b>Remove background music</b>Voice and music split onto their own tracks.</li>
+            <li><b>Sound design by meaning</b>95 built-in effects placed for you: whoosh on cuts, ka-ching on money talk.</li>
+            <li><b>Beat markers</b>Finds the tempo and marks every beat or bar, so B-roll lands on the beat.</li>
+          </ul>
+        </article>
+        <article class="group reveal">
+          <div class="g-head"><span class="g-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><h3>Create</h3></div>
+          <ul>
+            <li><b>Vertical Shorts</b>Finds hook-and-payoff moments, builds 9:16 timelines, exports 1080×1920.</li>
+            <li><b>B-roll from your library</b>Your clips matched to what is being said.</li>
+            <li><b>Podcasts</b>Camera switching per speaker, and speaker markers on one-mic recordings.</li>
+            <li><b>Chapters, downloads, safe zones</b>YouTube chapters, media download, Reels guides.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="library reveal">
+        <div><b>142</b><span>motion templates</span></div>
+        <div><b>65</b><span>one-click presets</span></div>
+        <div><b>95</b><span>sound effects</span></div>
+        <div><b>23</b><span>colour LUTs</span></div>
+      </div>
+      <p class="center reveal"><a class="btn" href="#trial" data-track="trial_cta" data-where="features">Try all 23 tools free</a></p>
+    </div>
+  </section>
+
+  <!-- Presets in motion: back once the previews are re-rendered in the brand colours -->
+
+  <!-- Who it's for -->
+  <section class="section pain">
+    <div class="wrap">
+      <p class="eyebrow reveal">Sound familiar?</p>
+      <h2 class="reveal">Your hours should go into the story, not the scrubbing.</h2>
       <div class="pain-cols">
         <div class="pain-col reveal">
-          <h3>If you edit for a living</h3>
-          <p>It's 1 a.m. and you're still cutting "umm" out of a 40-minute talk.</p>
-          <p>The speaker said the same line four times. You have to find the good take.</p>
-          <p>Hinglish captions take longer than the edit itself.</p>
-          <p>The client wants three Reels from the video by tomorrow.</p>
+          <h3>You edit for a living</h3>
+          <p>1 a.m., still cutting "umm" out of a 40-minute talk. The speaker said the same line four times. The client wants three Reels by tomorrow.</p>
         </div>
         <div class="pain-col reveal">
-          <h3>If you make videos</h3>
-          <p>You record in an hour. The edit takes three days.</p>
-          <p>Your editor bills you for the time spent cutting silence.</p>
-          <p>The Shorts you planned from every video never get made.</p>
-          <p>Your audio sounds like you recorded it in a bathroom.</p>
+          <h3>You make videos</h3>
+          <p>You record in an hour, the edit takes three days. Hinglish captions take longer than the edit. The Shorts you planned never get made.</p>
         </div>
         <div class="pain-col reveal">
-          <h3>If you run content or an agency</h3>
-          <p>Ten videos a week, two editors, and every deadline is today.</p>
-          <p>Every client wants captions, Shorts and sound design, at no extra cost.</p>
-          <p>You pay for four editing tools, each billed every month in dollars.</p>
-          <p>New editors take weeks to learn your style.</p>
+          <h3>You run a team</h3>
+          <p>Ten videos a week, two editors, every deadline is today. Four editing tools, each billed monthly in dollars.</p>
         </div>
       </div>
-      <p class="pain-out reveal">EditSutra does the slow first pass, so your hours go into the story, not the scrubbing.</p>
     </div>
   </section>
 
-  <!-- E. Features (current beta vs roadmap) -->
-  <section class="features" id="features">
-    <div class="wrap">
-      <h2 class="reveal">In the beta today</h2>
-      <p class="lede reveal">Tested on macOS with Premiere Pro 2026. Windows is in beta testing.</p>
-      <div class="grid">
-        <article class="card reveal"><div class="fx fx-cut" aria-hidden="true"><i class="s"></i><i class="p"></i><i class="s"></i><i class="r"></i><i class="s"></i><i class="p"></i><i class="s"></i></div><h3>Natural silence cutting</h3><p>Long pauses become a short breath, short ones stay: about 8 cuts a minute, never choppy. Every cut lands inside the silence, not on a word.</p></article>
-        <article class="card reveal"><div class="fx fx-modes" aria-hidden="true"><span>Tight</span><span>Medium</span><span>Light</span><b></b></div><h3>AI retake picker, offline</h3><p>Keeps the last good take and removes false starts, repeated lines and talk to the crew. Runs on your computer, every cut checked before it is made.</p></article>
-        <article class="card reveal"><div class="fx fx-preview" aria-hidden="true"><i class="s"></i><i class="p"></i><i class="s"></i><i class="p"></i><i class="s"></i><b></b></div><h3>Modes, preview &amp; undo</h3><p>Medium for full videos, Tight for Shorts, Light keeps natural pauses. Preview or mute instead of cutting, and one-click Undo.</p></article>
-        <article class="card reveal"><div class="fx fx-caps" aria-hidden="true"><p><span>Edit</span> <span>less,</span> <span>create</span> <span>more</span></p></div><h3>Editable captions</h3><p>Hindi, English and Hinglish on an editable caption track. Translate to English. Caption only an In/Out range.</p></article>
-        <article class="card reveal"><div class="fx fx-voice" aria-hidden="true"><i style="--d:0.0s;--h:20%"></i><i style="--d:0.1s;--h:73%"></i><i style="--d:0.2s;--h:66%"></i><i style="--d:0.3s;--h:59%"></i><i style="--d:0.4s;--h:52%"></i><i style="--d:0.5s;--h:45%"></i><i style="--d:0.6s;--h:38%"></i><i style="--d:0.7s;--h:31%"></i><i style="--d:0.8s;--h:24%"></i><i style="--d:0.0s;--h:77%"></i><i style="--d:0.1s;--h:70%"></i><i style="--d:0.2s;--h:63%"></i><i style="--d:0.3s;--h:56%"></i><i style="--d:0.4s;--h:49%"></i><i style="--d:0.5s;--h:42%"></i><i style="--d:0.6s;--h:35%"></i><i style="--d:0.7s;--h:28%"></i><i style="--d:0.8s;--h:21%"></i></div><h3>Voice cleanup</h3><p>Removes background noise, echo and hum on your computer. The original track is kept, muted.</p></article>
-        <article class="card reveal"><div class="fx fx-sfx" aria-hidden="true"><div class="tl"><i></i><i></i><i></i></div><span class="n n1">♪</span><span class="n n2">₹</span><span class="n n3">✦</span></div><h3>65 built-in sound effects</h3><p>Placed automatically by meaning: whooshes on cuts, ka-ching on money talk, a shutter on “photo”. Preview, add with one click, or use your own SFX folder.</p></article>
-        <article class="card reveal"><div class="fx fx-zoom" aria-hidden="true"><div class="frame"><div class="face"></div></div></div><h3>Jump cuts that disappear</h3><p>Matches the eye level across each cut so the jump vanishes, zooms only when the move is too big, and leads the sound with J/L cuts. Each one on or off.</p></article>
-        <article class="card reveal"><div class="fx fx-broll" aria-hidden="true"><div class="main"><div class="face"></div></div><div class="cut"></div></div><h3>B-roll from your library</h3><p>Your own clips matched to what is being said, placed muted above your footage.</p></article>
-        <article class="card reveal"><div class="fx fx-shorts" aria-hidden="true"><div class="box"><div class="face"></div></div></div><h3>Vertical Shorts</h3><p>Finds moments with a hook and a payoff, builds 9:16 timelines and exports 1080×1920 reels.</p></article>
-        <article class="card reveal"><div class="fx fx-tpl" aria-hidden="true"><p>BIG IDEA</p><i></i></div><h3>120 animation templates</h3><p>Text animations, titles, callouts, arrows, timers and more, sorted in 7 categories with previews. Click to drop at the playhead.</p></article>
-        <article class="card reveal"><div class="fx fx-color" aria-hidden="true"><div class="img"></div><div class="wipe"></div></div><h3>23 colour LUTs</h3><p>Cinematic, warm, cool, vintage and black &amp; white looks, previewed on a real face, plus an automatic colour fix as editable Lumetri values.</p></article>
-        <article class="card reveal"><div class="fx fx-pod" aria-hidden="true"><div class="cam a"><div class="face"></div></div><div class="cam b"><div class="face"></div></div></div><h3>Podcast camera switching</h3><p>One mic per person: switches to the camera of whoever is speaking.</p></article>
-        <article class="card reveal"><div class="fx fx-chap" aria-hidden="true"><div class="tl"></div><i style="--x:8%"></i><i style="--x:38%"></i><i style="--x:70%"></i></div><h3>YouTube chapters</h3><p>Chapter markers on the timeline and a list ready to paste into YouTube.</p></article>
-        <article class="card reveal"><div class="fx fx-dl" aria-hidden="true"><span class="arrow">↓</span><div class="bar"><b></b></div></div><h3>Media downloading</h3><p>Download videos you own or may use, whole or by start and end time. Needs internet.</p></article>
-        <article class="card reveal"><div class="fx fx-tpl" aria-hidden="true"><p>ZOOM IN</p><i></i></div><h3>65 one-click presets</h3><p>Zooms, transitions, text in &amp; out, B-roll moves and shakes, each with a live preview. Select clips, click, done: real keyframes you can adjust.</p></article>
-        <article class="card reveal"><div class="fx fx-shorts" aria-hidden="true"><div class="box"><div class="face"></div></div></div><h3>Safe zones for Reels</h3><p>Instagram, TikTok, YouTube and LinkedIn guides show where buttons and captions cover a vertical video.</p></article>
-        <article class="card reveal"><div class="fx fx-caps" aria-hidden="true"><p><span>Hindi</span> <span>+</span> <span>English</span> <span>+</span> <span>Hinglish</span></p></div><h3>Best speech models</h3><p>Hindi, English and Hinglish in one pass with the most accurate offline models, so cuts and captions follow what was really said.</p></article>
-        <article class="card card-cta reveal"><p class="cta-big">All 17 tools.<br>Free for 7 days.</p><p>No card, no account. Test every tool on your own footage, then pick a plan from ₹129 a month if it saves you time.</p><a class="btn" href="#trial" data-track="trial_cta" data-where="features">Start free trial</a></article>
-      </div>
-      <p class="swipe-hint">Swipe to see all 17 tools →</p>
-      <div class="roadmap reveal">
-        <h3>Coming next <span class="free-tag">Free for every licence holder</span></h3>
-        <ul>
-          <li><b>Beat edit</b>: cuts, zooms and flashes land on the music beats automatically</li>
-          <li><b>Auto zoom on key words</b>: punch-ins exactly where you stress a point</li>
-          <li><b>Auto titles and callouts</b>: your templates placed when a key point is spoken</li>
-          <li><b>Auto number animation</b>: say "₹50,000" and a counting title appears</li>
-          <li><b>Word captions</b>: the key word in each line big, coloured and highlighted</li>
-          <li><b>Remove music, keep the voice</b>: clean dialogue from any clip</li>
-          <li><b>Highlights cut</b>: the best moments of long videos ranked for you</li>
-          <li><b>Timeline tools</b>: close gaps, fit or fill frame, adjustment layers</li>
-          <li><b>My packs</b>: EditSutra uses your own templates, SFX and transitions automatically</li>
-        </ul>
-        <p class="more">…and more, free for every licence holder.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- E2. See it move: real preset previews from the plugin -->
-  <section class="moves" id="presets">
-    <div class="wrap">
-      <p class="eyebrow reveal">65 presets, one click</p>
-      <h2 class="reveal">See it move.</h2>
-      <p class="lede reveal">Select clips, click a preset, done. Real keyframes you can still adjust. These previews are rendered by EditSutra itself.</p>
-      <div class="loops">
-        <figure class="loop reveal"><video muted loop playsinline preload="none" poster="assets/presets/zoom-in-fast.jpg" data-src="assets/presets/zoom-in-fast.mp4" aria-label="Zoom In Fast preset preview"></video><figcaption>Zoom In Fast</figcaption></figure>
-        <figure class="loop reveal"><video muted loop playsinline preload="none" poster="assets/presets/punch-in-7.jpg" data-src="assets/presets/punch-in-7.mp4" aria-label="Punch In 7% preset preview"></video><figcaption>Punch In 7%</figcaption></figure>
-        <figure class="loop reveal"><video muted loop playsinline preload="none" poster="assets/presets/zoom-slick-end-of-clip.jpg" data-src="assets/presets/zoom-slick-end-of-clip.mp4" aria-label="Zoom Slick preset preview"></video><figcaption>Zoom Slick</figcaption></figure>
-        <figure class="loop reveal"><video muted loop playsinline preload="none" poster="assets/presets/spin-end-of-clip.jpg" data-src="assets/presets/spin-end-of-clip.mp4" aria-label="Spin preset preview"></video><figcaption>Spin</figcaption></figure>
-        <figure class="loop reveal"><video muted loop playsinline preload="none" poster="assets/presets/whip-pan-glitch.jpg" data-src="assets/presets/whip-pan-glitch.mp4" aria-label="Whip Pan Glitch preset preview"></video><figcaption>Whip Pan Glitch</figcaption></figure>
-        <figure class="loop reveal"><video muted loop playsinline preload="none" poster="assets/presets/pop-in.jpg" data-src="assets/presets/pop-in.mp4" aria-label="Pop In preset preview"></video><figcaption>Pop In</figcaption></figure>
-        <figure class="loop reveal"><video muted loop playsinline preload="none" poster="assets/presets/slide-in-from-left.jpg" data-src="assets/presets/slide-in-from-left.mp4" aria-label="Slide In preset preview"></video><figcaption>Slide In</figcaption></figure>
-        <figure class="loop reveal"><video muted loop playsinline preload="none" poster="assets/presets/handheld-smooth.jpg" data-src="assets/presets/handheld-smooth.mp4" aria-label="Handheld preset preview"></video><figcaption>Handheld</figcaption></figure>
-        <figure class="loop reveal"><video muted loop playsinline preload="none" poster="assets/presets/colour-glitch-1.jpg" data-src="assets/presets/colour-glitch-1.mp4" aria-label="Colour Glitch preset preview"></video><figcaption>Colour Glitch</figcaption></figure>
-        <figure class="loop reveal"><video muted loop playsinline preload="none" poster="assets/presets/bounce-in.jpg" data-src="assets/presets/bounce-in.mp4" aria-label="Bounce In preset preview"></video><figcaption>Bounce In</figcaption></figure>
-        <figure class="loop reveal"><video muted loop playsinline preload="none" poster="assets/presets/shakey-zoom-end-of-clip.jpg" data-src="assets/presets/shakey-zoom-end-of-clip.mp4" aria-label="Shakey Zoom preset preview"></video><figcaption>Shakey Zoom</figcaption></figure>
-        <figure class="loop reveal"><video muted loop playsinline preload="none" poster="assets/presets/text-glow.jpg" data-src="assets/presets/text-glow.mp4" aria-label="Text Glow preset preview"></video><figcaption>Text Glow</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- F. Languages -->
-  <section class="lang" id="languages">
-    <div class="wrap narrow">
-      <div>
-        <h2 class="reveal">Built with Indian-language creators in mind.</h2>
-        <p class="reveal">Create and edit captions for Hindi, English and Hinglish content, with tools designed to make correction and refinement easier.</p>
-        <ul class="ticks reveal">
-          <li>Hinglish spelled the way creators write it</li>
-          <li>Spoken numbers written as digits</li>
-          <li>“My words” list for names you always spell your way</li>
-          <li>Translate captions to English</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- G. Editable workflow -->
-  <section class="editable">
+  <!-- Languages + control -->
+  <section class="section two-up" id="languages">
     <div class="wrap two">
-      <div class="shot reveal">
-        <video class="shot-video" src="assets/timeline.mp4" poster="assets/timeline-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Animation of a Premiere Pro timeline: pauses cut, a caption track added, sound effects placed on A2"></video>
+      <div class="reveal">
+        <p class="eyebrow">Made for Indian creators</p>
+        <h2>Hinglish spelled the way you write it.</h2>
+        <ul class="ticks">
+          <li>Roman Hinglish, Devanagari Hindi and English, each with its own model</li>
+          <li>Spoken numbers written as digits</li>
+          <li>"My words" list for names you always spell your way</li>
+          <li>Paste your script for perfect spelling</li>
+        </ul>
       </div>
-      <div>
-        <h2 class="reveal">Automation should assist you, not take control.</h2>
-        <p class="reveal">Review and refine your edits in Premiere Pro. Keep creative decisions in your hands.</p>
-        <ul class="ticks reveal">
+      <div class="reveal">
+        <div class="shot"><video class="shot-video" src="assets/timeline.mp4" poster="assets/timeline-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Animation of a Premiere Pro timeline: pauses cut, a caption track added, sound effects placed on A2"></video></div>
+        <h3 class="mt">You stay in control.</h3>
+        <ul class="ticks">
           <li>Edits land as normal clips, captions, markers and effects</li>
-          <li>Undo in the panel restores the sequence from before the last EditSutra edit</li>
-          <li>Original voice kept, muted, when you clean audio</li>
-          <li>Your media stays on your computer</li>
+          <li>Undo restores the sequence from before</li>
+          <li>Your media never leaves your computer</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- H. Offer + pricing -->
-  <section class="pricing" id="pricing">
+  <!-- Pricing -->
+  <section class="section pricing" id="pricing">
     <div class="wrap">
-      <p class="eyebrow reveal">The Founding Creator offer</p>
-      <h2 class="reveal">Finish a 10-minute video in about 40 minutes, not 4 hours.</h2>
-      <p class="proof reveal"><b>Tested on a real 47-minute raw Hinglish video:</b> cut to 32 minutes with 373 natural cuts, retakes removed, zero gaps, in about 10 minutes on an Apple Silicon Mac.</p>
-      <p class="lede reveal">₹129 a month, less than a Netflix plan<sup>*</sup>. Pay for a year and save more, and the first 100 customers get their first year for ₹999.</p>
-
-      <!-- value calculator: the visitor's own numbers, not invented "worth" figures -->
-      <div class="calc reveal" aria-labelledby="calc-h">
-        <div class="calc-in">
-          <h3 id="calc-h">What EditSutra is worth to you</h3>
-          <label>Videos you edit a month <output id="o-videos">8</output><input id="c-videos" type="range" min="1" max="60" value="8"></label>
-          <label>Length of a typical video (minutes) <output id="o-len">10</output><input id="c-len" type="range" min="1" max="60" value="10"></label>
-          <p class="calc-est">EditSutra saves about <b id="o-hours">3.5 hours</b> on a video this long (our estimate)</p>
-          <label>Your time is worth (₹ per hour) <output id="o-rate">300</output><input id="c-rate" type="range" min="100" max="3000" step="50" value="300"></label>
-        </div>
-        <div class="calc-out" aria-live="polite">
-          <p>Time back every month</p><b id="r-hours">24 hours</b>
-          <p>That time is worth</p><b id="r-value">₹7,200 / month</b>
-          <p class="calc-vs">The Early Bird plan costs <strong>₹999 for a year</strong>, paid back in <span id="r-payback">about 4 days</span>.</p>
-          <p class="fine">Your own estimate. Time saved depends on your footage and computer, the free trial shows you the real number.</p>
-        </div>
-      </div>
+      <p class="eyebrow reveal">Pricing</p>
+      <h2 class="reveal">Less than a Netflix plan<sup>*</sup>.</h2>
+      <p class="lede reveal">Finish a 10-minute video in about 40 minutes instead of 4 hours. Test it free for 7 days, then pick a plan.</p>
 
       <div class="plans">
-        <!-- Plan 1: available now -->
         <article class="plan reveal">
-          <p class="plan-badge">Founding offer</p>
-          <p class="plan-name">Early Bird Annual · <span class="pack">Founding Creator Pack</span></p>
-          <div class="deal"><s>₹1,499</s><b>₹999</b><em class="per">/ first 12 months</em></div>
-          <p class="plan-ref"><b class="hot">Limited to the first 100 customers or the launch period.</b> No automatic renewal unless you choose it.</p>
-          <p class="stack-h">The editing work it takes off your hands</p>
-          <ul class="stack">
-            <li><b>Natural silence &amp; retake cutting</b><span>About 8 cuts a minute, AI retake picker, preview and undo</span></li>
-            <li><b>Jump cuts that disappear</b><span>Eye-level match, zoom only when needed, J/L sound</span></li>
-            <li><b>Hindi, Hinglish &amp; English captions</b><span>Best offline models, editable track, translate to English</span></li>
-            <li><b>Voice cleanup</b><span>Noise, echo and hum removed on your computer</span></li>
-            <li><b>Sound design by meaning</b><span>Whoosh on cuts, ka-ching on money talk, placed for you</span></li>
-            <li><b>Vertical Shorts</b><span>9:16 timelines and 1080×1920 reels from your long video</span></li>
-            <li><b>B-roll, chapters, podcast switching, downloads</b><span>All editable in Premiere</span></li>
+          <p class="plan-name">Monthly</p>
+          <div class="deal"><b>₹129</b><em class="per">/ month</em></div>
+          <p class="plan-note">Full access while subscribed. Cancel future renewals any time.</p>
+          <ul class="ticks small">
+            <li>All 23 tools</li>
+            <li>Templates, presets, sounds, LUTs</li>
+            <li>Updates while subscribed</li>
           </ul>
-          <p class="stack-h">Founding bonuses, inside the plugin</p>
-          <ul class="stack bonus">
-            <li><b>Bonus 1 · Daily Presets Pack</b><span>65 one-click zooms, transitions, text moves and shakes, each with a live preview</span></li>
-            <li><b>Bonus 2 · Motion Templates Library</b><span>120 text animations, titles, callouts, arrows and timers</span></li>
-            <li><b>Bonus 3 · Colour Looks</b><span>23 hand-picked LUTs, previewed on a real face</span></li>
-            <li><b>Bonus 4 · Sound Pack</b><span>65 levelled everyday sound effects, no hunting through folders</span></li>
-            <li><b>Bonus 5 · Reels Safe Zones</b><span>Instagram, TikTok, YouTube and LinkedIn guides</span></li>
-            <li><b>12 months of full access</b><span>Every included feature, plus all updates during your 12 months</span></li>
-            <li><b>One individual editor licence</b><span>No automatic renewal unless explicitly agreed</span></li>
-            <li><b>Beta-member support by email</b><span>Direct line to the maker during the beta</span></li>
-            <li><b>Your feature requests first</b><span>Beta members shape what comes next</span></li>
-            <li><b>Beta-member discount on future products &amp; courses</b><span>Early testers always pay less</span></li>
-            <li><b>Become an affiliate</b><span>Earn up to ₹50 on every sale you refer</span></li>
-          </ul>
-          <div class="ctas">
-            <a class="btn js-buy" href="#pricing" data-track="checkout_start" data-plan="Early Bird Annual · ₹999 for 12 months">Get Early Bird · ₹999</a>
-            <a class="btn btn-ghost" href="#trial" data-track="trial_cta" data-where="pricing">Try free for 7 days</a>
-          </div>
-          <div class="promise">
-            <p class="promise-h">The no-risk promise</p>
-            <p>Edit one real video with the 7-day free trial. If EditSutra doesn't save you at least an hour, don't buy it. No card is asked, so there is nothing to cancel.</p>
-          </div>
-          <ul class="pay-trust" aria-label="How paying works">
-            <li><b>Pay in rupees</b> with UPI, GPay, PhonePe, Paytm or card</li>
-            <li><b>Licence key by email</b> as soon as the payment is confirmed</li>
-            <li><b>Early Bird does not renew by itself</b>: no surprise charges</li>
-          </ul>
-          <form class="waitlist" id="order-form" hidden novalidate>
-            <p class="stack-h" id="order-plan">Your order: Early Bird Annual · ₹999 for 12 months</p>
-            <label>Name<input name="name" autocomplete="name" required maxlength="80"></label>
-            <label>Email (your licence key is sent here)<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
-            <label>WhatsApp number<input name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" required maxlength="20"></label>
-            <button class="btn" type="submit" data-track="order_request">Send my order</button>
-            <p class="checkout-msg" id="checkout-msg" role="status" hidden></p>
-          </form>
-          <p class="plan-tax">Final amount incl. any taxes is shown at checkout. *Netflix India Mobile plan ₹149/month (2026). Netflix is a trademark of Netflix, Inc., not affiliated with EditSutra. One individual editor licence. All sales final, test with the free trial first.</p>
+          <a class="btn btn-ghost js-buy" href="#pricing" data-track="checkout_start" data-plan="Monthly · ₹129 / month">Choose Monthly</a>
         </article>
 
-        <!-- Monthly and Standard Annual -->
-        <div class="plan-pair">
-          <article class="plan plan-mini reveal">
-            <p class="plan-name">Monthly</p>
-            <div class="deal"><b>₹129</b><em class="per">/ month</em></div>
-            <p class="netflix">Less than a Netflix plan<sup>*</sup></p>
-            <ul class="stack">
-              <li><b>Full included feature access</b><span>While subscribed</span></li>
-              <li><b>Flexible monthly billing</b><span>Cancel future renewals at any time</span></li>
-            </ul>
-            <p class="plan-ref">₹1,548 over 12 months if subscribed continuously.</p>
-            <a class="btn btn-ghost js-buy" href="#pricing" data-track="checkout_start" data-plan="Monthly · ₹129 / month">Choose Monthly</a>
-          </article>
-          <article class="plan plan-mini reveal">
-            <p class="plan-name">Standard Annual</p>
-            <div class="deal"><b>₹1,499</b><em class="per">/ year</em></div>
-            <ul class="stack">
-              <li><b>One year of features and updates</b><span>One individual editor licence</span></li>
-              <li><b>Save ₹49</b><span>Compared with 12 monthly payments</span></li>
-            </ul>
-            <p class="plan-ref">Renews yearly at the displayed price.</p>
-            <a class="btn btn-ghost js-buy" href="#pricing" data-track="checkout_start" data-plan="Standard Annual · ₹1,499 / year">Choose Annual</a>
-          </article>
+        <article class="plan plan-hot reveal">
+          <p class="plan-badge">Founding offer · first 100</p>
+          <p class="plan-name">Early Bird Annual</p>
+          <div class="deal"><s>₹1,499</s><b>₹999</b><em class="per">/ first 12 months</em></div>
+          <p class="plan-note">No automatic renewal unless you choose it.</p>
+          <ul class="ticks small">
+            <li>Everything in EditSutra for 12 months</li>
+            <li>142 templates, 65 presets, 95 sounds, 23 LUTs</li>
+            <li>All updates during your 12 months</li>
+            <li>Beta-member email support, your requests first</li>
+            <li>Affiliate: earn up to ₹50 per referral</li>
+          </ul>
+          <a class="btn js-buy" href="#pricing" data-track="checkout_start" data-plan="Early Bird Annual · ₹999 for 12 months">Get Early Bird · ₹999</a>
+          <a class="text-link" href="#trial" data-track="trial_cta" data-where="pricing">or try free for 7 days</a>
+        </article>
+
+        <article class="plan reveal">
+          <p class="plan-name">Standard Annual</p>
+          <div class="deal"><b>₹1,499</b><em class="per">/ year</em></div>
+          <p class="plan-note">Renews yearly at this price. Save ₹49 against monthly.</p>
+          <ul class="ticks small">
+            <li>All 23 tools for a year</li>
+            <li>Templates, presets, sounds, LUTs</li>
+            <li>A year of updates</li>
+          </ul>
+          <a class="btn btn-ghost js-buy" href="#pricing" data-track="checkout_start" data-plan="Standard Annual · ₹1,499 / year">Choose Annual</a>
+        </article>
+      </div>
+
+      <form class="order" id="order-form" hidden novalidate>
+        <p class="order-h" id="order-plan">Your order: Early Bird Annual · ₹999 for 12 months</p>
+        <div class="fields">
+          <label>Name<input name="name" autocomplete="name" required maxlength="80"></label>
+          <label>Email <span class="hint">(your licence key is sent here)</span><input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+          <label>WhatsApp number<input name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" required maxlength="20"></label>
+        </div>
+        <button class="btn" type="submit" data-track="order_request">Send my order</button>
+        <p class="checkout-msg" id="checkout-msg" role="status" hidden></p>
+      </form>
+
+      <ul class="pay-trust reveal" aria-label="How paying works">
+        <li><b>Pay in rupees</b>UPI, GPay, PhonePe, Paytm or card</li>
+        <li><b>Key by email</b>as soon as payment is confirmed</li>
+        <li><b>No-risk promise</b>if the free trial doesn't save you an hour, don't buy</li>
+      </ul>
+      <p class="fine center-text">Final amount incl. any taxes is shown at checkout. One individual editor licence on one computer. *Netflix India Mobile plan ₹149/month (2026); Netflix is a trademark of Netflix, Inc., not affiliated with EditSutra.</p>
+
+      <div class="calcs">
+        <div class="calc reveal" aria-labelledby="calc-h">
+          <div class="calc-in">
+            <h3 id="calc-h">What it's worth to you</h3>
+            <label>Videos you edit a month <output id="o-videos">8</output><input id="c-videos" type="range" min="1" max="60" value="8"></label>
+            <label>Length of a typical video (minutes) <output id="o-len">10</output><input id="c-len" type="range" min="1" max="60" value="10"></label>
+            <p class="calc-est">Saves about <b id="o-hours">3.5 hours</b> per video this long (our estimate)</p>
+            <label>Your time is worth (₹ per hour) <output id="o-rate">300</output><input id="c-rate" type="range" min="100" max="3000" step="50" value="300"></label>
+          </div>
+          <div class="calc-out" aria-live="polite">
+            <p>Time back every month</p><b id="r-hours">24 hours</b>
+            <p>That time is worth</p><b id="r-value">₹7,200 / month</b>
+            <p class="calc-vs">Early Bird (₹999 a year) pays back in <span id="r-payback">about 4 days</span>.</p>
+          </div>
         </div>
 
-        <!-- Teams: what EditSutra gives a whole editing team -->
-        <div class="team reveal" id="teams" aria-labelledby="team-h">
-          <div class="team-in">
-            <p class="eyebrow">For teams &amp; agencies</p>
-            <h3 id="team-h">Fewer people, more videos.</h3>
-            <p class="team-sub">Each seat costs less than a Netflix plan<sup>*</sup>. See what it gives your team.</p>
+        <div class="calc team reveal" id="teams" aria-labelledby="team-h">
+          <div class="calc-in">
+            <h3 id="team-h">For teams &amp; agencies</h3>
             <label>Editors in your team <output id="o-t-eds">10</output><input id="t-eds" type="range" min="1" max="200" value="10"></label>
-            <label>Monthly pay per editor or intern <output id="o-t-pay">₹15,000</output><input id="t-pay" type="range" min="5000" max="100000" step="1000" value="15000"></label>
+            <label>Monthly pay per editor <output id="o-t-pay">₹15,000</output><input id="t-pay" type="range" min="5000" max="100000" step="1000" value="15000"></label>
             <label>Videos each editor finishes a month <output id="o-t-vids">20</output><input id="t-vids" type="range" min="1" max="80" value="20"></label>
             <label>Length of a typical video (minutes) <output id="o-t-len">10</output><input id="t-len" type="range" min="1" max="60" value="10"></label>
           </div>
-          <div class="team-out" aria-live="polite">
-            <p>Hours your team gets back every month</p><b id="t-hours">700 hours</b>
-            <p>That is like hiring</p><b id="t-hires">4.4 more editors</b>
+          <div class="calc-out" aria-live="polite">
+            <p>Hours back every month</p><b id="t-hours">700 hours</b>
+            <p>Like hiring</p><b id="t-hires">4.4 more editors</b>
             <p class="team-worth">worth <span id="t-worth">₹65,625</span> a month in pay</p>
-            <p>Or, with the same team</p><b id="t-more">+167 videos a month</b>
-            <p class="calc-vs">EditSutra for <span id="t-n">10 editors</span>: <strong id="t-cost">₹1,290 / month</strong> · <span id="t-roi">51×</span> back</p>
-            <a class="btn" id="t-quote" href="#" data-track="team_quote">Get a team quote</a>
-            <p class="fine">Your own estimate, based on our tested saving (about 3.5 hours on a 10-minute video) and a 160-hour working month. Real savings depend on your footage. Each editor's saving is capped at 60% of their month.</p>
+            <p>Or with the same team</p><b id="t-more">+167 videos a month</b>
+            <p class="calc-vs">For <span id="t-n">10 editors</span>: <strong id="t-cost">₹1,290 / month</strong> · <span id="t-roi">51×</span> back</p>
+            <a class="btn btn-sm" id="t-quote" href="#" data-track="team_quote">Get a team quote</a>
           </div>
         </div>
+      </div>
+      <p class="fine center-text">Your own estimates, based on our tested saving (about 3.5 hours on a 10-minute video) and a 160-hour working month. Real savings depend on your footage and computer.</p>
 
-        <!-- Plan 2: coming soon -->
-        <article class="plan plan-soon reveal">
-          <p class="plan-badge soon">Coming soon</p>
-          <p class="plan-name">EditSutra Pro + AI Auto-Editor</p>
-          <div class="pro-hero">
-            <p class="pro-say">You say</p>
-            <p class="pro-prompt">“Edit this like a finance explainer. Tight cuts, Hinglish captions, punchy sound, and 5 Shorts.”</p>
-            <p class="pro-say">It edits. Inside your Premiere timeline.</p>
-          </div>
-          <p class="pro-pitch">Every editing trick scattered across YouTube tutorials, courses and paid templates, packed into <b>one AI skill</b>. No more learning, searching or clicking.</p>
-          <div class="pro-price"><s>₹2,999</s><b>₹1,999</b><span>price at launch · everything in EditSutra, plus:</span></div>
-          <ul class="stack bonus">
-            <li><b>AI Auto-Editor skill pack</b><span>All of EditSutra's editing steps combined into one Claude Code skill</span></li>
-            <li><b>Drop a video, get a finished edit</b><span>Cuts, captions, sound, look and Shorts in one run, in your chosen style</span></li>
-            <li><b>Ready-made editing styles</b><span>Education, vlog, podcast, Shorts-first</span></li>
-            <li><b>Private WhatsApp community for Pro editors</b><span>Share workflows, Claude skills and feedback with serious editors</span></li>
-          </ul>
-          <p class="powered"><b>Needs your own Claude Pro (or higher) subscription.</b> The AI Auto-Editor runs as Claude Code skills on your Claude account, paid separately to Anthropic and not included in this price.</p>
-          <form class="waitlist" id="waitlist" novalidate>
-            <p class="stack-h">Join the Pro waitlist</p>
-            <label>Name<input name="name" autocomplete="name" required maxlength="80"></label>
-            <label>Email<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
-            <label>WhatsApp number<input name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" required maxlength="20"></label>
-            <label class="consent"><input type="checkbox" name="consent" required> I agree to be contacted by email and WhatsApp about EditSutra Pro and the community.</label>
+      <details class="pro reveal">
+        <summary><span class="plan-badge soon">Coming soon</span> EditSutra Pro + AI Auto-Editor: say the edit you want, it edits</summary>
+        <div class="pro-body">
+          <p class="pro-prompt">“Edit this like a finance explainer. Tight cuts, Hinglish captions, punchy sound, and 5 Shorts.”</p>
+          <p>Every EditSutra step combined into one Claude Code skill, with ready-made editing styles and a private WhatsApp community for Pro editors. Launch price <b>₹1,999</b> <s>₹2,999</s>. Needs your own Claude Pro (or higher) subscription from Anthropic, paid separately.</p>
+          <form class="order" id="waitlist" novalidate>
+            <p class="order-h">Join the Pro waitlist</p>
+            <div class="fields">
+              <label>Name<input name="name" autocomplete="name" required maxlength="80"></label>
+              <label>Email<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+              <label>WhatsApp number<input name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" required maxlength="20"></label>
+            </div>
+            <label class="consent"><input type="checkbox" name="consent" required> I agree to be contacted by email and WhatsApp about EditSutra Pro.</label>
             <button class="btn" type="submit" data-track="waitlist_submit" data-plan="pro">Join the waitlist</button>
             <p class="checkout-msg" id="pro-msg" role="status" hidden></p>
           </form>
-          <div class="pro-vs">
-            <p class="stack-h">Without Pro vs with Pro</p>
-            <ul>
-              <li><span>Watch 20 tutorials to learn an editing style</span><b>Name the style, it edits that way</b></li>
-              <li><span>Click through 17 tools one by one</span><b>One sentence runs them all</b></li>
-              <li><span>Hunt for templates, SFX and prompts online</span><b>Built into the skill</b></li>
-              <li><span>Edit alone, stuck on problems</span><b>Pro editors' WhatsApp group</b></li>
-            </ul>
-          </div>
-          <ol class="pro-steps">
-            <li><b>1</b>Open your video in Premiere Pro</li>
-            <li><b>2</b>Tell Claude the edit you want</li>
-            <li><b>3</b>Review a finished, editable timeline</li>
-          </ol>
-          <p class="plan-tax">Not available yet. Beta buyers will be offered the upgrade first. Claude is a product of Anthropic; EditSutra is not affiliated with Anthropic.</p>
-        </article>
-      </div>
-
-      <div class="riskfree reveal">
-        <h3>Zero risk to try</h3>
-        <p>Use every feature free for 7 days on your own videos, no card, no account, nothing charged when it ends. Buy only if it saves you time.</p>
-      </div>
-      <p class="fine center-text">Please review the system requirements and supported beta features before purchasing.</p>
+          <p class="fine">Not available yet. Claude is a product of Anthropic; EditSutra is not affiliated with Anthropic.</p>
+        </div>
+      </details>
     </div>
   </section>
 
-  <!-- I. Trial -->
-  <section class="trial" id="trial">
+  <!-- Trial -->
+  <section class="section trial" id="trial">
     <div class="wrap">
-      <h2 class="reveal">How the free trial works</h2>
-      <ol class="flow three">
-        <li class="reveal"><b>1</b><h3>Download &amp; install</h3><p>No account needed. Run the installer for Mac or Windows, then open EditSutra in Premiere Pro (Window → Extensions).</p></li>
-        <li class="reveal"><b>2</b><h3>7 days, everything on</h3><p>The trial starts when you first open EditSutra. First open downloads the AI files once (about 1.9 GB).</p></li>
-        <li class="reveal"><b>3</b><h3>Decide</h3><p>Test it on your own footage. Buy only if it fits your workflow.</p></li>
+      <p class="eyebrow reveal">Free for 7 days</p>
+      <h2 class="reveal">Try it on your own footage.</h2>
+      <ol class="steps">
+        <li class="reveal"><b>1</b><h3>Download &amp; install</h3><p>No account. Then open EditSutra in Premiere Pro (Window → Extensions).</p></li>
+        <li class="reveal"><b>2</b><h3>Everything on for 7 days</h3><p>First open downloads the AI files once. Nothing is charged, ever, unless you buy.</p></li>
+        <li class="reveal"><b>3</b><h3>Decide</h3><p>When the trial ends the tools lock; your projects stay exactly as they are.</p></li>
       </ol>
       <div class="downloads reveal">
-        <a class="btn" id="dl-mac" href="#trial" data-track="download_click" data-os="mac">Download for Mac (Apple Silicon)</a>
-        <a class="btn btn-ghost" id="dl-win" href="#trial" data-track="download_click" data-os="windows">Download for Windows (beta)</a>
+        <a class="btn btn-lg" id="dl-mac" href="#trial" data-track="download_click" data-os="mac">Download for Mac (Apple Silicon)</a>
+        <a class="btn btn-ghost btn-lg" id="dl-win" href="#trial" data-track="download_click" data-os="windows">Download for Windows (beta)</a>
       </div>
       <p class="dl-msg" id="dl-msg" role="status" hidden></p>
       <div class="install-help reveal">
-        <div>
-          <h3>Mac: "Apple could not verify" message?</h3>
-          <p>Normal for new beta software. Click <b>Done</b>, then open <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b> next to EditSutra. Or right-click the installer → <b>Open</b> → <b>Open</b>. You only do this once.</p>
-        </div>
-        <div>
-          <h3>Windows: "Windows protected your PC"?</h3>
-          <p>Click <b>More info</b>, then <b>Run anyway</b>. EditSutra runs fully on your computer and never uploads your videos. Stuck? Email <a href="mailto:rishavskillverse@gmail.com">rishavskillverse@gmail.com</a>.</p>
-        </div>
-      </div>
-      <div class="expiry reveal">
-        <h3>When the trial ends</h3>
-        <p>Nothing is charged, there is no card on file. The EditSutra tools lock until you enter a licence key; your projects and timelines stay exactly as they are. Buy if you want to keep using it, and paste the emailed key to unlock.</p>
+        <details><summary>Mac says "Apple could not verify"?</summary><p>Normal for new beta software. Click <b>Done</b>, open <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b> next to EditSutra. You only do this once.</p></details>
+        <details><summary>Windows says "Windows protected your PC"?</summary><p>Click <b>More info</b>, then <b>Run anyway</b>. EditSutra runs fully on your computer and never uploads your videos.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- J. Requirements -->
-  <section class="req" id="requirements">
+  <!-- Requirements -->
+  <section class="section req" id="requirements">
     <div class="wrap two">
-      <div>
-        <h2 class="reveal">System requirements</h2>
-        <dl class="specs reveal">
-          <dt>Premiere Pro</dt><dd>2024 or newer (beta tested on Premiere Pro 2026)</dd>
-          <dt>Mac</dt><dd>Apple Silicon (M1 or newer). Intel Macs are not supported yet.</dd>
-          <dt>Windows</dt><dd>Windows 10 or 11, 64-bit, <b>beta</b></dd>
-          <dt>Memory</dt><dd>8 GB RAM minimum, 16 GB recommended</dd>
-          <dt>Disk</dt><dd>About 3 GB for the plugin and its AI files</dd>
+      <div class="reveal">
+        <h2>System requirements</h2>
+        <dl class="specs">
+          <dt>Premiere Pro</dt><dd>2024 or newer (tested on 2026)</dd>
+          <dt>Mac</dt><dd>Apple Silicon (M1 or newer)</dd>
+          <dt>Windows</dt><dd>10 or 11, 64-bit (beta)</dd>
+          <dt>Memory</dt><dd>8 GB minimum, 16 GB recommended</dd>
+          <dt>Disk</dt><dd>About 4 GB with the AI files</dd>
         </dl>
       </div>
-      <div>
-        <h3 class="reveal">Internet</h3>
-        <ul class="ticks reveal">
-          <li>Needed once on first open, to download the AI files (about 1.9 GB)</li>
-          <li>Needed once to activate a licence key</li>
-          <li>Needed for the media-download tool and update checks</li>
-          <li>Not needed for editing: cutting, captions, voice cleanup, sound design and Shorts run on your computer</li>
+      <div class="reveal">
+        <h3>Internet</h3>
+        <ul class="ticks">
+          <li>Once, to download the AI files on first open</li>
+          <li>Once, to activate a licence key</li>
+          <li>For media downloads and update checks</li>
+          <li>Not for editing: cuts, captions, sound and Shorts run offline</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- K. FAQ -->
-  <section class="faq" id="faq">
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
     <div class="wrap narrow">
       <h2 class="reveal">Questions</h2>
       <div class="qa">
-        <details><summary>What is EditSutra?</summary><p>A plugin panel for Adobe Premiere Pro that automates repetitive parts of talking-head editing, pauses and retakes, captions, voice cleanup, sound design, Shorts and more, and leaves the results editable on your timeline.</p></details>
-        <details><summary>Which Premiere Pro versions are supported?</summary><p>Premiere Pro 2024 or newer. The beta was tested on Premiere Pro 2026.</p></details>
-        <details><summary>Does it support Hindi and Hinglish captions?</summary><p>Yes, Hindi, Hinglish and English, with Hinglish spelled the way creators usually write it. Automatic captions can still contain mistakes, so review them before publishing.</p></details>
-        <details><summary>Does EditSutra work offline?</summary><p>Editing does. You need internet once to download the AI files on first open, once to activate your key, and for the media-download tool.</p></details>
-        <details><summary>What does the 7-day trial include?</summary><p>Every feature in the current beta, on your own projects, for 7 days from the first time you open EditSutra.</p></details>
-        <details><summary>Do I need a credit or debit card?</summary><p>No. The trial needs no card and no account.</p></details>
-        <details><summary>What happens when the trial ends?</summary><p>Nothing is charged. The tools lock until you enter a licence key; your projects are untouched.</p></details>
-        <details><summary>Is it a subscription?</summary><p>Pick what suits you. Monthly (₹129) renews each month and you can cancel future renewals any time. Standard Annual (₹1,499) renews yearly at the shown price. The Early Bird offer (₹999 for 12 months) does not renew automatically unless you choose to.</p></details>
-        <details><summary>What does a licence include?</summary><p>Every included EditSutra feature for one individual editor, for as long as your plan is active.</p></details>
-        <details><summary>How many computers can I activate?</summary><p>One licence works on one computer.</p></details>
-        <details><summary>Can I transfer my licence to another computer?</summary><p>Yes, if you replace or change your computer, contact support and we move your licence to the new one.</p></details>
-        <details><summary>Are updates included?</summary><p>Yes. Every update released while your plan is active is included, and the app shows when one is ready.</p></details>
-        <details><summary>What do I need for the Pro AI Auto-Editor?</summary><p>Your own Claude Pro (or higher) subscription from Anthropic, which is paid separately and not included. The Pro plan gives you the editing skill pack, the editing styles and the WhatsApp community. The EditSutra plugin itself (Beta plan) needs no Claude subscription.</p></details>
-        <details><summary>What if a feature doesn't work on my footage?</summary><p>That's what the free trial is for, test your own footage first. During the beta, send us a screenshot and the log file from the app so we can fix it.</p></details>
+        <details><summary>What is EditSutra?</summary><p>A panel for Adobe Premiere Pro that does the repetitive parts of talking-head editing (pauses, retakes, captions, sound, Shorts and more) and leaves everything editable on your timeline.</p></details>
+        <details><summary>Does it support Hindi and Hinglish captions?</summary><p>Yes: Roman Hinglish, Devanagari Hindi and English, each with its own speech model. Automatic captions can still contain mistakes, so review them before publishing, or paste your script for exact wording.</p></details>
+        <details><summary>Does it work offline?</summary><p>Editing does. You need internet once to download the AI files, once to activate your key, and for the media-download tool.</p></details>
+        <details><summary>Do I need a card for the trial?</summary><p>No. The 7-day trial needs no card and no account. When it ends nothing is charged; the tools lock until you enter a licence key.</p></details>
+        <details><summary>Is it a subscription?</summary><p>Your choice. Monthly (₹129) renews each month; cancel future renewals any time. Standard Annual (₹1,499) renews yearly. Early Bird (₹999 for 12 months) does not renew unless you choose to.</p></details>
+        <details><summary>How many computers can I use?</summary><p>One licence works on one computer. Changing computers? Contact support and we move it.</p></details>
+        <details><summary>Are updates included?</summary><p>Yes, every update released while your plan is active. The plugin shows when one is ready and installs bug fixes itself.</p></details>
+        <details><summary>Refunds?</summary><p>Please test with the free trial first: payments are final. Monthly plans can be cancelled at any time and stop at the end of the paid month. If your key doesn't arrive or won't activate, email support and we fix it.</p></details>
         <details><summary>How do I contact support?</summary><p id="faq-support">Email rishavskillverse@gmail.com.</p></details>
-        <details><summary>What are the refund and cancellation terms?</summary><p>There is nothing to cancel: it is not a subscription. All sales are final, so please use the free 7-day trial to test EditSutra on your own footage before buying. If your key does not arrive or will not activate, email support and we fix it.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- L. Final CTA -->
-  <section class="final">
+  <!-- Final CTA -->
+  <section class="final" id="final">
     <div class="wrap">
-      <h2 class="reveal">Spend less time on repetitive edits.</h2>
-      <p class="reveal">Test EditSutra on your own footage and see whether it fits your workflow.</p>
+      <h2 class="reveal">Spend your time on the story.</h2>
+      <p class="reveal">Test EditSutra on your own footage. Seven days, every tool, no card.</p>
       <div class="ctas center reveal">
-        <a class="btn" href="#trial" data-track="trial_cta" data-where="final">Start Your 7-Day Free Trial</a>
-        <a class="link" href="#pricing">See Pricing</a>
+        <a class="btn btn-lg" href="#trial" data-track="trial_cta" data-where="final">Start your 7-day free trial</a>
+        <a class="btn btn-ghost btn-lg" href="#pricing">See pricing</a>
       </div>
     </div>
   </section>
 </main>
 
-<!-- M. Footer -->
 <footer class="foot">
   <div class="wrap foot-grid">
-    <div><a class="logo" href="#top">Edit<span>Sutra</span></a><p class="fine">AI-assisted editing for Premiere Pro.</p></div>
+    <div><a class="logo" href="#top">Edit<span>Sutra</span></a><p class="fine">AI-assisted editing inside Premiere Pro.</p></div>
     <nav aria-label="Product"><p>Product</p><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#requirements">System requirements</a><a href="#faq">FAQ</a></nav>
-    <nav aria-label="Legal"><p>Policies</p><a href="policies.html#privacy">Privacy policy</a><a href="policies.html#terms">Terms of service</a><a href="policies.html#refund">Refund policy</a><a href="policies.html#licence">Licence &amp; update policy</a></nav>
+    <nav aria-label="Legal"><p>Policies</p><a href="policies.html#privacy">Privacy policy</a><a href="policies.html#terms">Terms of service</a><a href="policies.html#refund">Refund policy</a><a href="policies.html#licence">Licence &amp; updates</a></nav>
     <nav aria-label="Support"><p>Support</p><span id="foot-support" class="fine">rishavskillverse@gmail.com</span></nav>
   </div>
-  <div class="wrap fine copy"><p>© 2026 EditSutra · Made by Rishav Mishra</p><p class="tm">Adobe and Premiere Pro are trademarks of Adobe Inc. Claude is a trademark of Anthropic. EditSutra is an independent product, not affiliated with or endorsed by Adobe or Anthropic.</p></div>
+  <div class="wrap fine copy"><p>© 2026 EditSutra · Made by Rishav Mishra</p><p class="tm">Adobe and Premiere Pro are trademarks of Adobe Inc. EditSutra is an independent product, not affiliated with or endorsed by Adobe.</p></div>
 </footer>
 
-<script src="config.js?v=24"></script>
-<script src="main.js?v=24" defer></script>
+<script src="config.js?v=25"></script>
+<script src="main.js?v=25" defer></script>
 <a class="m-cta" id="m-cta" href="#trial" data-track="trial_cta" data-where="sticky">Start free trial · 7 days</a>
 </body>
 </html>
