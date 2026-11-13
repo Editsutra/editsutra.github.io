@@ -628,6 +628,8 @@ body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-in
 .kb.soon { background: transparent; border: 1px dashed var(--line-2); color: var(--dim); }
 .lib-tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 18px; scrollbar-width: thin; }
 .lib-tabs button { flex: none; font: 600 14px/1 var(--body); padding: 10px 14px; min-height: 42px; border-radius: 99px; border: 1px solid var(--line-2); background: transparent; color: var(--muted); cursor: pointer; }
+.lib-tabs button small { margin-left: 7px; font: 500 12px/1 var(--tc); opacity: .6; }
+@media (min-width: 900px) { .lib-tabs { flex-wrap: wrap; overflow: visible; } }
 .lib-tabs button[aria-selected="true"] { background: #fff; color: #0a0a0c; border-color: #fff; }
 .lib-grid { display: grid; gap: 10px; grid-template-columns: 1fr; }
 @media (min-width: 640px) { .lib-grid { grid-template-columns: repeat(2, 1fr); } }

@@ -16,7 +16,7 @@
   const tabs = $('lib-tabs'), grid = $('lib-grid');
   if (tabs && window.ES_FEATURES) {
     const cats = [['all', 'All'], ...window.ES_CATS];
-    tabs.innerHTML = cats.map(([k, n], i) => `<button role="tab" aria-selected="${i === 0}" data-k="${k}">${n}</button>`).join('');
+    tabs.innerHTML = cats.map(([k, n], i) => `<button role="tab" aria-selected="${i === 0}" data-k="${k}">${n}<small>${k === 'all' ? window.ES_FEATURES.length : window.ES_FEATURES.filter((f) => f[0] === k).length}</small></button>`).join('');
     // status stays internal (data-status) until launch; every card shows its own animation of how the tool works
     const card = ([c, name, line, kind, status, anim]) => `<article class="feat" data-status="${status}"><canvas data-mini="${anim}" aria-hidden="true"></canvas><h3>${name}</h3><p>${line}</p><i class="kb ${kind}">${KIND[kind]}</i></article>`;
     const show = (k) => {
