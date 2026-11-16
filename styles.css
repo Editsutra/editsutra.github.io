@@ -185,7 +185,7 @@ sup { font-size: .55em; }
 .plan .ticks { margin: 4px 0 24px; }
 @media (max-width: 899px) { .plan-hot { order: -1; } }
 .plan-hot { border-color: rgba(139, 92, 246, .6); background: linear-gradient(180deg, #1c1433, var(--surface) 40%); box-shadow: 0 30px 80px -30px rgba(124, 58, 237, .45); padding: 34px 26px; }
-.plan-badge { display: inline-block; align-self: flex-start; padding: 5px 12px; border-radius: 99px; background: var(--accent); color: var(--accent-ink); font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+.plan-badge { display: inline-block; align-self: center; padding: 5px 12px; border-radius: 99px; background: var(--accent); color: var(--accent-ink); font-size: 13px; font-weight: 700; margin-bottom: 16px; }
 .plan-badge.soon { background: var(--surface-2); color: var(--accent-soft); border: 1px solid var(--line-2); margin: 0 8px 0 0; }
 .plan-name { font: 700 18px var(--head); margin-bottom: 8px; }
 .deal { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
