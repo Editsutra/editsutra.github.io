@@ -276,11 +276,11 @@
         <li class="reveal"><b>2</b><h3>Everything on for 7 days</h3><p>The 7 days start the first time you press a tool. First open downloads the AI files once. Nothing is charged unless you buy.</p></li>
         <li class="reveal"><b>3</b><h3>Decide</h3><p>When the trial ends the tools lock. Your projects stay as they are.</p></li>
       </ol>
-      <div class="dl-card reveal">
+      <div class="dl-card reveal" id="download">
         <div class="dl-main">
           <p class="dl-k">Free 7-day trial · every tool</p>
-          <a class="btn btn-xl" id="dl-mac" href="https://github.com/rishavm713-create/editsutra/releases/download/v1.0.0-beta.1/EditSutra-beta-mac.pkg" data-track="download_click" data-os="mac"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>Download for Mac</a>
-          <a class="btn btn-xl btn-ghost" id="dl-win" href="https://github.com/rishavm713-create/editsutra/releases/download/v1.0.0-beta.1/EditSutra-beta-windows.zip" data-track="download_click" data-os="windows"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>Download for Windows</a>
+          <a class="btn btn-xl" id="dl-mac" href="#download" data-track="download_click" data-os="mac"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>Download for Mac</a>
+          <a class="btn btn-xl btn-ghost" id="dl-win" href="#download" data-track="download_click" data-os="windows"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>Download for Windows</a>
           <p class="dl-meta">Mac: Apple Silicon (M1 or newer) · Windows 10/11 (beta) · Premiere Pro 2024+</p>
         </div>
         <ul class="dl-why"><li>No card</li><li>No account</li><li>Your projects stay yours</li><li>Stuck? <a href="mailto:rishavskillverse@gmail.com?subject=EditSutra%20help&amp;body=My%20computer%20(Mac%2FWindows)%3A%0APremiere%20version%3A%0AWhat%20happened%3A">rishavskillverse@gmail.com</a></li></ul>
@@ -303,6 +303,9 @@
         <details><summary>How do the captions get into Premiere?</summary><p>EditSutra writes a standard SRT file and adds it to your sequence as a Premiere caption track, so you can edit the words and style them in Premiere. Animated word-by-word captions come in as a see-through video on their own track.</p></details>
         <details><summary>What do I need?</summary><p>Premiere Pro 2024 or newer. A Mac with Apple Silicon (M1 or newer), or Windows 10/11 64-bit (beta). 8 GB memory (16 GB recommended) and about 4 GB of disk for the AI files.</p></details>
         <details><summary>Can it download videos?</summary><p>Yes. Paste a YouTube, Instagram or Pinterest link and the clip lands on your timeline at the quality you pick (highest, 1080p, 720p or MP3). Use it for your own videos or footage you have the rights to.</p></details>
+        <details><summary>Does EditSutra upload my videos?</summary><p>No. Your videos, audio and images never leave your computer. Everything runs offline after the first start.</p></details>
+        <details><summary>What does "Help us make EditSutra better?" share?</summary><p>Only if you say yes when the panel asks: how you used the tools and what you changed by hand after them (for example bringing a cut back, adding B-roll, a transition, a zoom or a sound, fixing a caption word), as text, with a few spoken words near each change. Never your files or their names. We use it to make the automatic edits more like what editors really do.</p></details>
+        <details><summary>Can I turn sharing off?</summary><p>Yes, any time. Click "Sharing: on" at the bottom of the panel. Nothing is kept or sent after that.</p></details>
         <details><summary>Does it work offline?</summary><p>Editing does. You need internet once to download the AI files, once to activate your key, and for the media-download tool.</p></details>
         <details><summary>Do I need a card for the trial?</summary><p>No. The 7-day trial needs no card and no account. When it ends nothing is charged; the tools lock until you enter a licence key.</p></details>
         <details><summary>Is it a subscription?</summary><p>Your choice. Monthly (₹129) renews each month; cancel future renewals any time. Standard Annual (₹1,499) renews yearly. Early Bird (₹999 for 12 months) does not renew unless you choose to.</p></details>
@@ -316,6 +319,33 @@
   </section>
 
 </main>
+
+<dialog class="terms-dlg" id="terms-dlg" aria-labelledby="terms-h">
+  <form method="dialog">
+    <h2 id="terms-h">Terms and Conditions</h2>
+    <div class="terms-text" tabindex="0">
+      <p>Please read these terms before you download EditSutra. By ticking the box and pressing Continue you agree to them. If you are not comfortable with any part of these terms, please do not download or use EditSutra.</p>
+      <p><b>1. Who we are.</b> EditSutra is a panel for Adobe Premiere Pro made by Rishav Mishra, India. Contact: rishavskillverse@gmail.com.</p>
+      <p><b>2. Trial.</b> The free trial lasts 7 days from the first time you press a tool and needs no payment details. When it ends the tools lock until you enter a licence key. Your projects stay as they are.</p>
+      <p><b>3. Licence.</b> A licence lets one person use EditSutra on one computer. Keys may not be shared, resold or published. Replacing your computer: email us and we move your licence.</p>
+      <p><b>4. Payments and refunds.</b> Monthly plans renew each month until cancelled; access continues until the end of the paid month. Standard Annual renews yearly unless cancelled. Early Bird does not renew unless you choose it. All sales are final; please test with the free trial first. If your key does not arrive or will not activate, email us and we fix it.</p>
+      <p><b>5. Updates.</b> Every update released while your plan is active is included. EditSutra checks for and installs signed bug fixes by itself.</p>
+      <p><b>6. Your files.</b> EditSutra edits your videos on your own computer. Your footage, audio, images and captions are not uploaded. Activating a licence sends your licence key and an anonymous computer ID once, to tie the licence to that computer.</p>
+      <p><b>7. Help improve EditSutra (your choice).</b> The panel asks you once (Yes / No, thanks). Only if you say yes, EditSutra shares, as text, how its tools were used and what you changed by hand afterwards: the settings you chose, what each tool changed on your timeline (cuts, B-roll, sounds, transitions, zooms, effects), the changes you then made yourself (for example a cut you brought back, B-roll you added or removed, a caption word you corrected), the times of these changes, effect and transition names, and a few spoken words near each change. It is sent at most once a day, together with your licence key (or, during the trial, a code for your computer). We use it only to make EditSutra's automatic edits better. Your videos, audio, images, and file, clip, folder, project and sequence names are never sent. You can turn sharing off at any time at the bottom of the panel ("Sharing: on/off"); nothing is kept or sent after that. To see or delete what you shared, or for any privacy complaint, email rishavskillverse@gmail.com and we act within 30 days.</p>
+      <p><b>8. Buying.</b> When you buy, the payment page collects your name, email and payment details to process the order and email your licence key. We use your email only for your licence, support and important product updates.</p>
+      <p><b>9. Beta software.</b> EditSutra is beta software, provided as it is, without warranty. Always keep a copy of your original footage and projects. We are not liable for lost work, data or profits.</p>
+      <p><b>10. Fair use.</b> Use the media-download tool only for videos you own or have permission to use. Do not copy, reverse engineer, modify or redistribute EditSutra.</p>
+      <p><b>11. Trademarks.</b> Adobe and Premiere Pro are trademarks of Adobe Inc. EditSutra is an independent product, not affiliated with Adobe.</p>
+      <p><b>12. Changes and law.</b> We may update these terms; the version on our website applies. These terms follow the laws of India.</p>
+      <p>Full policies: <a href="policies.html" target="_blank" rel="noopener">editsutra.github.io/policies.html</a></p>
+    </div>
+    <label class="terms-tick"><input type="checkbox" id="terms-ok"> I have read and agree to the Terms and Conditions and the Privacy policy</label>
+    <div class="terms-btns">
+      <button class="btn btn-ghost" value="cancel">Cancel</button>
+      <button class="btn" id="terms-go" value="ok" disabled>Continue</button>
+    </div>
+  </form>
+</dialog>
 
 <footer class="foot">
   <div class="wrap foot-grid">

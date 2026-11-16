@@ -522,6 +522,15 @@ body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-in
 .dl-card { display: grid; gap: 22px; margin-top: 28px; padding: 28px; border-radius: 20px; background: radial-gradient(120% 140% at 0% 0%, rgba(124,58,237,.35), rgba(124,58,237,.06) 60%), var(--surface); border: 1px solid rgba(124,58,237,.5); box-shadow: 0 30px 80px -30px rgba(124,58,237,.55); }
 @media (min-width: 900px) { .dl-card { grid-template-columns: 1fr auto; align-items: center; padding: 40px; } }
 .dl-main { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.terms-dlg { width: min(560px, calc(100vw - 32px)); padding: 24px; border-radius: 16px; border: 1px solid rgba(124,58,237,.5); background: var(--surface); color: var(--text); }
+.terms-dlg::backdrop { background: rgba(0,0,0,.7); }
+.terms-dlg h2 { font-size: 20px; margin: 0 0 12px; }
+.terms-text { height: 220px; overflow-y: auto; padding: 12px; border-radius: 8px; background: rgba(0,0,0,.25); border: 1px solid rgba(255,255,255,.1); font-size: 11px; line-height: 1.45; color: var(--dim); }
+.terms-text p { margin: 0 0 8px; }
+.terms-tick { display: flex; gap: 10px; align-items: flex-start; margin: 16px 0; font-size: 14px; cursor: pointer; }
+.terms-tick input { width: 18px; height: 18px; margin-top: 1px; flex: none; accent-color: var(--accent); }
+.terms-btns { display: flex; gap: 10px; justify-content: flex-end; }
+.terms-btns .btn:disabled { opacity: .4; cursor: not-allowed; box-shadow: none; }
 .dl-k { width: 100%; margin: 0 0 4px; font: 700 14px/1 var(--body); color: var(--accent-soft); }
 .btn-xl { font-size: 18px; padding: 18px 26px; border-radius: 14px; display: inline-flex; align-items: center; gap: 10px; min-height: 60px; }
 .btn-xl svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }

@@ -65,10 +65,18 @@
   });
 
   // ---------- downloads ----------
-  const dlMsg = $('dl-msg');
+  const dlMsg = $('dl-msg'), dlg = $('terms-dlg'), ok = $('terms-ok'), go = $('terms-go');
+  let dlUrl = '';
+  ok.addEventListener('change', () => { go.disabled = !ok.checked; });
+  dlg.addEventListener('close', () => {
+    if (dlg.returnValue === 'ok' && ok.checked) { track('terms_agree'); location.href = dlUrl; }
+    ok.checked = false; go.disabled = true;
+  });
+  const askTerms = (url) => { dlUrl = url; dlg.returnValue = ''; dlg.showModal(); };
   [['dl-mac', 'mac'], ['dl-win', 'windows']].forEach(([id, os]) => {
     const a = $(id), url = (S.downloads || {})[os];
-    if (url) { a.href = url; return; }
+    // no direct link: Download opens the Terms; the file starts only after the box is ticked and Continue pressed
+    if (url) { a.addEventListener('click', (e) => { e.preventDefault(); askTerms(url); }); return; }
     a.addEventListener('click', (e) => {
       e.preventDefault();
       dlMsg.hidden = false;
