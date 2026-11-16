@@ -858,3 +858,6 @@ h1 .cl-mark.big { width: .8em; height: .8em; vertical-align: -.02em; margin-left
 
 .trial-hl { display: inline-block; margin: 4px 0 14px; padding: 8px 16px; border-radius: 99px; border: 1px solid var(--accent-soft); background: rgba(124, 58, 237, .16); color: #fff; font-size: 16px; }
 .trial-hl b { color: var(--accent-soft); }
+/* Wide screens: less empty space on top and at the sides (owner 2026-11-16) */
+@media (min-width: 980px) { .hero { padding: 40px 0 56px; } .hero-grid { align-items: start; } .hero-media { margin-top: 24px; } }
+@media (min-width: 1400px) { .wrap { max-width: 1340px; } }
