@@ -855,3 +855,6 @@ h1 .cl-mark.big { width: .8em; height: .8em; vertical-align: -.02em; margin-left
   .pg-tracks .trk { height: 14px; margin-top: 3px; }
   .pg-status { padding: 8px 12px; min-height: 0; font-size: 13px; }
 }
+
+.trial-hl { display: inline-block; margin: 4px 0 14px; padding: 8px 16px; border-radius: 99px; border: 1px solid var(--accent-soft); background: rgba(124, 58, 237, .16); color: #fff; font-size: 16px; }
+.trial-hl b { color: var(--accent-soft); }
